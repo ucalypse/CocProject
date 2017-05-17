@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: antiquewhite;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -42,6 +43,12 @@ textarea {
         padding-bottom: 12px;
     }
 }
-#banner {
-    background-image: url(/Content/Images/homeBanner.jpg);
+#navBar {
+    background-color: antiquewhite;
+    border-right: 2px;
+}
+#homePicture {
+    float: right;
+    height: 200px;
+    width: 300px;
 }
