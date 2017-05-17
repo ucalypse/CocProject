@@ -42,6 +42,6 @@ textarea {
         padding-bottom: 12px;
     }
 }
-.container {
+#banner {
     background-image: url(/Content/Images/homeBanner.jpg);
 }

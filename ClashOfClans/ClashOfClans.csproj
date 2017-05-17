@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TownHallController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +266,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\TownHall\ThreeThrough6.cshtml" />
+    <Content Include="Views\TownHall\TownHall7.cshtml" />
+    <Content Include="Views\TownHall\TownHall8.cshtml" />
+    <Content Include="Views\TownHall\TownHall9.cshtml" />
+    <Content Include="Views\TownHall\TownHall10.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
