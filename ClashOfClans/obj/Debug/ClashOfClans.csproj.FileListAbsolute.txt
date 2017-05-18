@@ -162,3 +162,5 @@ C:\projects\ClashOfClans\ClashOfClans\bin\Microsoft.Owin.Security.MicrosoftAccou
 C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
 C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.dll
 C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.pdb
+C:\projects\ClashOfClans\ClashOfClans\bin\nunit.framework.dll
+C:\projects\ClashOfClans\ClashOfClans\bin\nunit.framework.xml
