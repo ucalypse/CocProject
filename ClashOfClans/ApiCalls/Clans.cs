@@ -8,11 +8,12 @@ namespace ClashOfClans.ApiCalls
 {
     public class Clans
     {
-        public IEnumerable<Clans> GetClans{
+        public IEnumerable<Clans> GetOurClan()
+        {
             var client = new RestClient("http://api.clashofclans.com/v1/");
-
+            var clanTag = "#8UJGPROJ";
             var request = new RestRequest("clans", Method.GET);
-            request.AddParameter("name", "in yo face");
+            request.AddParameter("clanTag", clanTag);
 
             request.AddHeader("Accept", "application/json");
             request.AddHeader("Authorization",
@@ -23,15 +24,10 @@ namespace ClashOfClans.ApiCalls
             Console.WriteLine("Request Completed....");
 
             var responseContent = response.Content;
-            Console.WriteLine("Sending request content to file...");
-            var file = new System.IO.StreamWriter("..\\testApiCall.txt");
-            file.WriteLine("This is the response: " + responseContent);
-            file.WriteLine(response.ErrorMessage);
-            file.WriteLine(response.ErrorException);
-            file.Close();
+            Console.WriteLine(responseContent);
 
             Console.ReadLine();
-            return new IEnumerable<Clans>();
+            return new List<Clans>();
+        }
     }
-    
 }
