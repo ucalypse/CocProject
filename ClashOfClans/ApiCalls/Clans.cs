@@ -10,24 +10,29 @@ namespace ClashOfClans.ApiCalls
     {
         public IEnumerable<Clans> GetOurClan()
         {
-            var client = new RestClient("http://api.clashofclans.com/v1/");
-            var clanTag = "#8UJGPROJ";
-            var request = new RestRequest("clans", Method.GET);
-            request.AddParameter("clanTag", clanTag);
-
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("Authorization",
-                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNkMDkzZThhLWMxNTAtNDI1NS04NTA4LWMzYTBlMTU1MTMyNiIsImlhdCI6MTQ5NTE1MzMyNSwic3ViIjoiZGV2ZWxvcGVyLzEzNmQ0NzI1LTYyMWItMmY1OC1iNTcwLWM1ZGY2ZmVmN2U2MyIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEwOC44NC4xOTguMTQiXSwidHlwZSI6ImNsaWVudCJ9XX0.hIjNh83gOEbkbLdaQn-9u8gkSxFuyOAoDaq1tarxlvpKolZh5kKQYP9MCGhitYSaeJNUuJwIm7kUTXeHXZPYug");
-
+        
+                       var client = new RestClient("https://api.clashofclans.com/v1/");
+           
+                       var request = new RestRequest("clans/{clanTag}", Method.GET);
+                       
+        
+                  request.AddHeader("Accept", "application/json");
+                  request.AddHeader("Authorization",
+                          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjdlNWVjYWFjLWE4Y2QtNGZkNC1hNDRkLWFiMzhjNjI1ZGZhYiIsImlhdCI6MTQ5NTE2MjI3OSwic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjk5LjE2NC4xNzYuMzUiLCIyNTUuMjU1LjI1NS4wIl0sInR5cGUiOiJjbGllbnQifV19.tSYU-C5VOXf3goTNoGMFJc5BCEAc2WFKbLyMD_O5PPAuJ4Gy5IlhgYyawE4wG36OIux_BrBqW1wdeBudO73dCQ");
+            request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
             Console.WriteLine("Sending request....");
+            foreach (var item in request.Parameters)
+            {
+                Console.Write(item);
+            }
+
             var response = client.Execute(request);
-            Console.WriteLine("Request Completed....");
-
-            var responseContent = response.Content;
-            Console.WriteLine(responseContent);
-
-            Console.ReadLine();
-            return new List<Clans>();
+                      Console.WriteLine("Request Completed....");
+        
+                  var responseContent = response.Content;
+        
+                    Console.Write(responseContent);
+                    return new List<Clans>();
         }
     }
 }

@@ -17,5 +17,6 @@ namespace ClashOfClans.ApiCalls
             var clans = new Clans();
             Assert.That(clans.GetOurClan(), Is.EqualTo("In yo face"));
         }
+       
     }
 }
