@@ -14,8 +14,8 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void getClans_Returns_Clan()
         {
-            var clans = new Clans();
-            Assert.That(clans.GetOurClan(), Is.EqualTo("In yo face"));
+            var clan = new Clan();
+            Assert.That(clan.GetOurClan(), Is.EqualTo("1"));
         }
        
     }
