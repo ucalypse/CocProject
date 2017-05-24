@@ -10,9 +10,10 @@ namespace ClashOfClans.ApiCalls
 {
     public class Member
     {
-        [JsonProperty("name")]
+        [DeserializeAs(Name = "name")]
         public string Name { get; set; }
-        [JsonProperty("rank")]
+
+        [DeserializeAs(Name = "rank")]
         public int Rank { get; set; }
 
         
