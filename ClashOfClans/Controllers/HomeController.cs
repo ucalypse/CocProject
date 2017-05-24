@@ -16,7 +16,7 @@ namespace ClashOfClans.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About our clan";
 
             return View();
         }

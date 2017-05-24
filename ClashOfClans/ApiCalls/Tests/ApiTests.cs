@@ -14,8 +14,8 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void getClans_Returns_Clan()
         {
-            var clan = new Clan();
-            Assert.That(clan.GetOurClan(), Is.EqualTo("1"));
+            var apiCalls = new ApiCalls();
+            Assert.That(apiCalls.GetOurClan(), Is.EqualTo("1"));
         }
        
     }
