@@ -10,10 +10,7 @@ namespace ClashOfClans.ApiCalls
 {
     public class Clan
     {
-        public List<Member> Members { get; set; }
-
-        public string Name { get; set; }
-
+        public List<Member> members;
         public IEnumerable<Member> GetOurClan()
         {
           var client = new RestClient("https://api.clashofclans.com/v1/");
@@ -27,12 +24,13 @@ namespace ClashOfClans.ApiCalls
 
             var response = client.Execute(request);
 
-            var convertedValues = JsonConvert.DeserializeObject<Member>(response.Content);
+            var content = response.Content;
+            var convertedValues = JsonConvert.DeserializeObject<Member>(content);
             
             Console.WriteLine(convertedValues);
           
-            Console.WriteLine(Members);
-            return Members;
+            Console.WriteLine(members);
+            return members;
         }
     }
 }
