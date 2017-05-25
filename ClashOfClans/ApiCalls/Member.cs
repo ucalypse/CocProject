@@ -10,12 +10,12 @@ namespace ClashOfClans.ApiCalls
 {
     public class Member
     {
-        [DeserializeAs(Name = "name")]
+      //  [DeserializeAs(Name = "name")]
         public string Name { get; set; }
 
-        [DeserializeAs(Name = "rank")]
+      //  [DeserializeAs(Name = "rank")]
         public int Rank { get; set; }
-
-        
+        [DeserializeAs(Name = "items")]
+        public List<Member> Members { get; set; }
     }
 }
