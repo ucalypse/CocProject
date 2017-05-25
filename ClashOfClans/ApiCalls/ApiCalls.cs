@@ -9,7 +9,7 @@ namespace ClashOfClans.ApiCalls
 {
     public class ApiCalls
     {
-        public Member GetOurClan()
+        public List<Member> GetOurClan()
         {
             var members = new Member();
             var client = new RestClient("https://api.clashofclans.com/v1/");
@@ -21,12 +21,13 @@ namespace ClashOfClans.ApiCalls
             request.AddHeader("Authorization", token);
             request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
 
-            var response = client.Execute(request);
-            var deserializer = new JsonDeserializer();
-            members = deserializer.Deserialize<Member>(response);
+            var response = client.Execute<Member>(request);
+            //var deserializer = new JsonDeserializer();
+            //members = deserializer.Deserialize<Member>(response);
             
            // var newMembers = members.OrderBy(member => member.Rank).ToList();
-            return members;
+            //return members;
+            return response.Data.Members;
         }
     }
 }
