@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: antiquewhite;
+    background-image: url("C:\projects\ClashOfClans\ClashOfClans\Content\Images\th4.jpg")
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -51,4 +52,10 @@ textarea {
     float: right;
     height: 200px;
     width: 300px;
+}
+#th3 {
+    float: right;
+}
+#threeToSix {
+    background-image: url("Images/firebackground.jpg");
 }

@@ -80,7 +80,6 @@ c:\users\dada\documents\visual studio 2015\Projects\ClashOfClans\ClashOfClans\bi
 c:\users\dada\documents\visual studio 2015\Projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
 c:\users\dada\documents\visual studio 2015\Projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.dll
 c:\users\dada\documents\visual studio 2015\Projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.pdb
-C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
 C:\Users\Dada\Documents\Visual Studio 2015\Projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
 C:\Users\Dada\Documents\Visual Studio 2015\Projects\CocProject\ClashOfClans\bin\ApplicationInsights.config
 C:\Users\Dada\Documents\Visual Studio 2015\Projects\CocProject\ClashOfClans\bin\roslyn\csc.exe
@@ -250,5 +249,6 @@ C:\projects\ClashOfClans\ClashOfClans\bin\Microsoft.Owin.Security.OAuth.xml
 C:\projects\ClashOfClans\ClashOfClans\bin\Microsoft.Owin.Security.Google.xml
 C:\projects\ClashOfClans\ClashOfClans\bin\Microsoft.Owin.Security.Twitter.xml
 C:\projects\ClashOfClans\ClashOfClans\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
 C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.dll
 C:\projects\ClashOfClans\ClashOfClans\obj\Debug\ClashOfClans.pdb
