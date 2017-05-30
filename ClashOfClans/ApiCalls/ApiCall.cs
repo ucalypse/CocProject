@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ClashOfClans.Models;
 using RestSharp;
 using RestSharp.Deserializers;
 
 namespace ClashOfClans.ApiCalls
 {
-    public class ApiCalls
+    public class ApiCall
     {
         public List<Member> GetOurClan()
         {
@@ -20,7 +21,7 @@ namespace ClashOfClans.ApiCalls
             request.AddHeader("Authorization", token);
             request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
 
-            var response = client.Execute<Member>(request);
+            var response = client.Execute<ClanListViewModel>(request);
      
             return response.Data.Members;
         }
