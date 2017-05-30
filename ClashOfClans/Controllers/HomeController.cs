@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using ClashOfClans.ApiCalls;
+using ClashOfClans.Models;
 
 namespace ClashOfClans.Controllers
 {
@@ -11,7 +12,11 @@ namespace ClashOfClans.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var view = new ClanListViewModel
+            {
+                Members = apiCall.GetOurClan()
+        };
+            return View(view);
         }
 
         public ActionResult About()
