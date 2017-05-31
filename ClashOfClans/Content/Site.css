@@ -55,12 +55,7 @@ textarea {
 #th3 {
     float: right;
 }
-#threeToSix {
-    background-image: url("Images/firebackground.jpg");
-    /*background-size: cover;*/
-    opacity: 0.5;
-    background-repeat: no-repeat
-}
+
 #memberTable {
     float: right;   
 }
@@ -72,4 +67,10 @@ table td{
     background-color: chocolate;
     border: 5px solid black;
     padding-right: 10px;
+}
+div.container.body-content {
+    background-image: url("Images/firebackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
