@@ -228,6 +228,7 @@
     <Content Include="Content\Images\th4.jpg" />
     <Content Include="Content\Images\th5.jpg" />
     <Content Include="Content\Images\th6.jpg" />
+    <Content Include="Content\Images\th7.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
