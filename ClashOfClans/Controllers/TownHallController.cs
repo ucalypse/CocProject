@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClashOfClans.ApiCalls;
 
 namespace ClashOfClans.Controllers
 {
     public class TownHallController : Controller
     {
+
+        ApiCall apiCall = new ApiCall();
         // GET: TownHall
         public ActionResult ThreeThrough6()
         {
-            return View();
+            var result = apiCall.GetOurClan().Where(s => s.Rank == 1);
+
+            return View(result);
         }
         public ActionResult TownHall7()
         {

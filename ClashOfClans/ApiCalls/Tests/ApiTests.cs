@@ -18,6 +18,14 @@ namespace ClashOfClans.ApiCalls
 
             Assert.That(apiCalls.GetOurClan(), Is.EqualTo(34));
         }
+
+        [Test]
+        public void getPlayerInfo_Returns_Info()
+        {
+            var apiCalls = new ApiCall();
+            var expected = apiCalls.GetPlayerInfo("#RPP222JV");
+            Assert.That(expected.Name, Is.EqualTo("Dada"));
+        }
        
     }
 }

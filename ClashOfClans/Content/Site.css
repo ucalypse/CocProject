@@ -74,3 +74,6 @@ div.container.body-content {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.clanRules {
+    color: red;
+}
