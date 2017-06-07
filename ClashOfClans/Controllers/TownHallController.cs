@@ -12,11 +12,18 @@ namespace ClashOfClans.Controllers
 
         ApiCall apiCall = new ApiCall();
         // GET: TownHall
-        public ActionResult ThreeThrough6()
+        public ActionResult ThreeThrough6(string playerTag)
         {
-            var result = apiCall.GetOurClan().Where(s => s.Rank == 1);
+            var result = apiCall.GetPlayerInfo(playerTag);
 
             return View(result);
+        }
+
+        public JsonResult GetJson(string playerTag)
+        {
+            var result = apiCall.GetPlayerInfo("#82P8R820V");
+
+            return Json(result);
         }
         public ActionResult TownHall7()
         {

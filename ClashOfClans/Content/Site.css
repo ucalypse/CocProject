@@ -63,7 +63,7 @@ textarea {
 footer {
     text-align: center;
 }
-table td{
+#memberTable.td{
     background-color: chocolate;
     border: 5px solid black;
     padding-right: 10px;
@@ -76,4 +76,8 @@ div.container.body-content {
 }
 .clanRules {
     color: red;
+}
+#lowerMembers {
+    font-family: fantasy;
+    font-size: 24px;
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ClashOfClans.Controllers;
+using ClashOfClans.Models;
 using NUnit.Framework;
 
 namespace ClashOfClans.ApiCalls
@@ -25,6 +26,14 @@ namespace ClashOfClans.ApiCalls
             var apiCalls = new ApiCall();
             var expected = apiCalls.GetPlayerInfo("#RPP222JV");
             Assert.That(expected.Name, Is.EqualTo("Dada"));
+        }
+
+        [Test]
+        public void SerializeData_SerializesObject()
+        {
+            var serialize = new Serialize();
+            var expected = serialize.SerializeData(new ClanListViewModel());
+            Assert.That(expected, Is.TypeOf<string>());
         }
        
     }

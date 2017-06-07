@@ -83,4 +83,3 @@ C:\projects\CocProject\ClashOfClans\bin\Microsoft.Owin.Security.Twitter.xml
 C:\projects\CocProject\ClashOfClans\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.dll
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.pdb
-C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
