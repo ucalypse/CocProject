@@ -1,3 +1,3 @@
 ﻿var display = (function() {
-    alert("wah");
+    $("#beginnerTable").hide();
 });
