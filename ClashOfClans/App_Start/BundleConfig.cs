@@ -32,7 +32,7 @@ namespace ClashOfClans
                       "~/Content/site.css"));
             //Custom Bundles
             bundles.Add(new ScriptBundle("~/bundles/townhall").Include(
-                "~/Scripts/TownHall/ServerSide.js"));
+                "~/Scripts/TownHall/*.js"));
         }
     }
 }
