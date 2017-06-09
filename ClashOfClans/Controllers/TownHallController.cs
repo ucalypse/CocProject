@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ClashOfClans.ApiCalls;
+using ClashOfClans.Models;
 
 namespace ClashOfClans.Controllers
 {
@@ -14,9 +15,9 @@ namespace ClashOfClans.Controllers
         // GET: TownHall
         public ActionResult ThreeThrough6(string playerTag)
         {
-            var result = apiCall.GetPlayerInfo(playerTag);
+            var view = apiCall.GetOurClan();
 
-            return View(result);
+            return View(view);
         }
 
         public JsonResult GetJson(string playerTag)
