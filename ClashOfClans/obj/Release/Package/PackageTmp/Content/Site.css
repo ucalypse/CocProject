@@ -1,0 +1,83 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: antiquewhite;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: left;
+        display: block;
+       
+    }
+    .sidebar-nav .navbar li {
+        float: left;
+        display: block;
+       
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+#navBar {
+    background-color: antiquewhite;
+    border-right: 2px;
+}
+#homePicture {
+    float: right;
+    height: 200px;
+    width: 300px;
+}
+#th3 {
+    float: right;
+}
+
+#memberTable {
+    float: right;   
+}
+
+footer {
+    text-align: center;
+}
+#memberTable.td{
+    background-color: chocolate;
+    border: 5px solid black;
+    padding-right: 10px;
+}
+div.container.body-content {
+    background-image: url("Images/firebackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.clanRules {
+    color: red;
+}
+#lowerMembers {
+    font-family: fantasy;
+    font-size: 24px;
+}
