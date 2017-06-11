@@ -13,6 +13,9 @@ namespace ClashOfClans
         [DeserializeAs(Name = "name")]
         public string Name { get; set; }
 
+        [DeserializeAs(Name = "tag")]
+        public string PlayerTag { get; set; }
+
         [DeserializeAs(Name = "clanRank")]
         public int Rank { get; set; }
 
