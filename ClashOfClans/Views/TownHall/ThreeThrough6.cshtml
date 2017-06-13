@@ -1,5 +1,4 @@
-﻿@model List<Member>
-
+﻿
 @{
     ViewBag.Title = "ThreeThrough6";
 }
@@ -84,15 +83,14 @@
 </div>
 
 <script>
-    var Member = function(name, rank) {
+    var Member = function (clanTag, name, rank) {
+        this.clanTag = clanTag;
         this.name = name;
         this.rank = rank;
     };
     var viewModel = {
         members : [
-            new Member("Wah", 1),
-            new Member("Wah2", 2),
-            new Member("Wah3", 3)
+           $.ajax("/TownHall")
         ],
     };
     ko.applyBindings(viewModel);
