@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using ClashOfClans.ApiCalls;
+﻿using ClashOfClans.ApiCalls;
 using ClashOfClans.Models;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace ClashOfClans.Controllers
 {
@@ -16,19 +12,29 @@ namespace ClashOfClans.Controllers
         // GET: TownHall
         public ActionResult ThreeThrough6()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public JsonResult GetFilteredList()
+        {
             var members = apiCall.GetOurClan();
             var membersWithInfo = new List<Member>();
+
             foreach (var member in members)
             {
                 membersWithInfo.Add(apiCall.GetPlayerInfo(member.PlayerTag));
-                
             }
 
             var filteredList = apiCall.FilterMembers(membersWithInfo, 6);
 
-            return View(filteredList);
-        }
+            var model = new ClanListViewModel
+            {
+                Members = filteredList
+            };
 
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult TownHall7()
         {
             return View();

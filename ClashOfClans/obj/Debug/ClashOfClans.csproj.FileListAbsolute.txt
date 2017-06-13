@@ -255,3 +255,4 @@ C:\projects\CocProject\CocProject\ClashOfClans\bin\Microsoft.Owin.Security.Micro
 C:\projects\CocProject\CocProject\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache
 C:\projects\CocProject\CocProject\ClashOfClans\obj\Debug\ClashOfClans.dll
 C:\projects\CocProject\CocProject\ClashOfClans\obj\Debug\ClashOfClans.pdb
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.csprojResolveAssemblyReference.cache

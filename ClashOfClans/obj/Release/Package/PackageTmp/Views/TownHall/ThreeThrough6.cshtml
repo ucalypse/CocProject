@@ -1,5 +1,4 @@
-﻿@model List<Member>
-
+﻿
 @{
     ViewBag.Title = "ThreeThrough6";
 }
@@ -74,25 +73,17 @@
         <th>Name</th>
         <th>Town Hall Level</th>
         </thead>
-    <tbody data-bind="foreach: members">
+    <tbody data-bind="foreach: Members">
     <tr>
-        <td data-bind="text: name"></td>
-        <td data-bind="text: rank"></td>
+        <td data-bind="text: PlayerTag"></td>
+        <td data-bind="text: Name"></td>
+        <td data-bind="text: TownHallLevel"></td>
     </tr>
     </tbody>
 </table>
 </div>
 
 <script>
-    var Member = function(name, rank) {
-        this.name = name;
-        this.rank = rank;
-    };
-    var viewModel = {
-        members : [
-            new Member("Wah", 1),
-            new Member("Wah2", 2),
-            new Member("Wah3", 3)
-        ],
-    };
+   
+
 </script>

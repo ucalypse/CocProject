@@ -197,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiCalls\ApiCall.cs" />
-    <Compile Include="ApiCalls\Serialize.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />

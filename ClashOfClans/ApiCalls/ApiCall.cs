@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ClashOfClans.Models;
+﻿using ClashOfClans.Models;
 using RestSharp;
-using RestSharp.Deserializers;
+using System.Collections.Generic;
 
 namespace ClashOfClans.ApiCalls
 {
@@ -28,7 +24,7 @@ namespace ClashOfClans.ApiCalls
 
             return response.Data.Members;
 
-            //return new List<Member>();
+           // return new List<Member>();
         }
 
         public Member GetPlayerInfo(string playerTag)
@@ -44,20 +40,6 @@ namespace ClashOfClans.ApiCalls
             var response = client.Execute<Member>(request).Data;
             return response;
         }
-        public string GetPlayerInfoJson(string playerTag)
-        {
-            var token =
-                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjdlNWVjYWFjLWE4Y2QtNGZkNC1hNDRkLWFiMzhjNjI1ZGZhYiIsImlhdCI6MTQ5NTE2MjI3OSwic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjk5LjE2NC4xNzYuMzUiLCIyNTUuMjU1LjI1NS4wIl0sInR5cGUiOiJjbGllbnQifV19.tSYU-C5VOXf3goTNoGMFJc5BCEAc2WFKbLyMD_O5PPAuJ4Gy5IlhgYyawE4wG36OIux_BrBqW1wdeBudO73dCQ";
-            var request = new RestRequest("players/{playerTag}", Method.GET);
-
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("Authorization", token);
-            request.AddParameter("playerTag", playerTag, ParameterType.UrlSegment);
-
-            var response = client.Execute(request).Content;
-            return response;
-        }
-
         public List<Member> FilterMembers(List<Member> filterList, int townHallLevel)
         {
             var filteredList = new List<Member>();

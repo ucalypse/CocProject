@@ -1,4 +1,9 @@
-﻿$(function() {
+﻿$(function () {
+    $.getJSON('/TownHall/GetFilteredList')
+        .done(function(response) {
+            ko.applyBindings(response);
+        });
+
     $("#beginnerTable").hide();
 });
 
