@@ -1,22 +1,23 @@
 ﻿$(function () {
-    function MemberProperties(name) {
+    
+    function MemberModel(response) {
         var self = this;
-        self.name = ko.observable(name);
+        self.name = ko.observable(response.Name);
+        self.townHallLevel = response.TownHallLevel;
+        self.clanTag = response.ClanTag;
+      
     }
     function MemberViewModel() {
         var self = this;
-
-       self.memberList = $.getJSON('/TownHall/GetFilteredList')
-            .done(function(response) {
-               ko.applyBindings(response);
+        self.members = ko.observableArray();
+        $.getJSON("Home/ActivityData", function (data) {
+            $.each(data, function () {
+                self.members.push(new MemberModel(data));
             });
-
-        self.seats = ko.observableArray([
-            new SeatReservation("Steve", self.availableMeals[0]),
-            new SeatReservation("Bert", self.availableMeals[0])
-        ]);
+        });
     }
-    
+
+    ko.applyBindings(new MemberViewModel());
     $("#beginnerTable").hide();
 });
 
