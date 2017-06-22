@@ -34,8 +34,6 @@ namespace ClashOfClans
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             //Custom Bundles
-            bundles.Add(new ScriptBundle("~/bundles/townhall").Include(
-                "~/Scripts/TownHall/*.js"));
         }
     }
 }
