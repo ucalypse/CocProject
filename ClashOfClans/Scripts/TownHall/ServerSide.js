@@ -1,24 +1,21 @@
 ﻿$(function () {
-    var ClanMember = function() {
-        this.name = ko.observable();
-        this.playerTag;
-        this.townHallLevel;
-    };
-    wahwah = [];
-    $.getJSON('/TownHall/GetFilteredList')
+        var ClanMember = function(identifier, playerTag, townHallLevel) {
+            this.name = ko.observable(identifier);
+            this.playerTag = playerTag;
+            this.townHallLevel = townHallLevel;
+        };
+    
+    $.getJSON('/TownHall/GetFilteredList') 
         .done(function (response) {
+            var wahwah = [];
             $.each(response.Members,
                 function(i,k) {
-                    wahwah.push(new ClanMember()
-                        .name(k.Name)
-                        .playerTag = k.PlayerTag
-                        .townHallLevel = k.TownHallLevel
-                    );
-                });
+                    wahwah.push(new ClanMember(k.Name, k.PlayerTag, k.TownHallLevel));
+                    alert(wahwah[i].name);
+                }); 
             
             ko.applyBindings(response);
         });
-    alert(wahwah);
     $("#beginnerTable").hide();
 });
 
