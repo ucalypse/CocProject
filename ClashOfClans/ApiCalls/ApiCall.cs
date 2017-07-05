@@ -12,11 +12,10 @@ namespace ClashOfClans.ApiCalls
         {
             var azureToken = "ct41QO9aZ8EWhu3yb80gP6a2ggH5wlpL6P0fApCPtBLnxSC4ppq/Nw==";
 
-            var azureRequest = new RestRequest("HttpTriggerCSharp2?", Method.GET);
+            var azureRequest = new RestRequest("GetClanInfo?code=ct41QO9aZ8EWhu3yb80gP6a2ggH5wlpL6P0fApCPtBLnxSC4ppq/Nw==", Method.GET);
             azureRequest.AddHeader("Accept", "application/json");
-            azureRequest.AddParameter("code", azureToken);
-
-            var response = azureClient.Execute<ClanListViewModel>(azureRequest);
+            var response = azureClient.Execute(azureRequest);
+            //var response = azureClient.Execute<ClanListViewModel>(azureRequest);
 
             return response.Data.Members;
         }
