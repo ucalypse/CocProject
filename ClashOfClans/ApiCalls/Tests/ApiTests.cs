@@ -16,7 +16,7 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void getClans_Returns_Clan()
         {
-            Assert.That(apiCalls.GetOurClan(), Is.EqualTo(32));
+            Assert.That(apiCalls.GetOurClan().Count, Is.EqualTo(32));
         }
 
         [Test]
