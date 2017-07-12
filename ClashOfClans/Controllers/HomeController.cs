@@ -32,5 +32,11 @@ namespace ClashOfClans.Controllers
 
             return View();
         }
+        public ActionResult Tutorials()
+        {
+            ViewBag.Message = "Video Tutorials";
+
+            return View();
+        }
     }
 }

@@ -296,6 +296,7 @@
     <Content Include="Views\TownHall\TownHall8.cshtml" />
     <Content Include="Views\TownHall\TownHall9.cshtml" />
     <Content Include="Views\TownHall\TownHall10.cshtml" />
+    <Content Include="Views\Home\Tutorials.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
