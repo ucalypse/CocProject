@@ -18,7 +18,6 @@
             
             ko.applyBindings(response);
         });
-    alert(wahwah);
     $("#beginnerTable").hide();
 });
 
