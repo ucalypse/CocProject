@@ -1,4 +1,5 @@
 ﻿body {
+    
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: antiquewhite;
@@ -6,6 +7,10 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    background-image: url("Images/ClashBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -68,16 +73,17 @@ footer {
     border: 5px solid black;
     padding-right: 10px;
 }
-div.container.body-content {
-    background-image: url("Images/firebackground.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+
 .clanRules {
     color: red;
 }
 #lowerMembers {
     font-family: fantasy;
     font-size: 24px;
+}
+p {
+    font-weight: bolder;
+}
+.jumbo {
+    background-color: red;
 }

@@ -19,19 +19,6 @@ namespace ClashOfClans.Controllers
             return View(view);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "About our clan";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public ActionResult Tutorials()
         {
             ViewBag.Message = "Video Tutorials";
