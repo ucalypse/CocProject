@@ -7,6 +7,7 @@ namespace ClashOfClans.ApiCalls
     public class ApiCall
     {
         RestClient azureClient = new RestClient("https://apicalls.azurewebsites.net/api/");
+        RestClient client = new RestClient("https://api.clashofclans.com/v1/");
 
         public List<Member> GetOurClan()
         {
@@ -28,7 +29,7 @@ namespace ClashOfClans.ApiCalls
             request.AddHeader("Authorization", token);
             request.AddParameter("playerTag", playerTag, ParameterType.UrlSegment);
 
-            var response = azureClient.Execute<Member>(request).Data;
+            var response = client.Execute<Member>(request).Data;
             return response;
         }
         public List<Member> FilterMembers(List<Member> filterList, int townHallLevel)
