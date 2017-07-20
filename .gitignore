@@ -1,12 +1,4 @@
-.vs/ClashOfClans/v15/.suo
-ClashOfClans/bin/ClashOfClans.dll
-ClashOfClans/bin/ClashOfClans.pdb
-ClashOfClans/obj/Debug/ClashOfClans.csprojResolveAssemblyReference.cache
-ClashOfClans/obj/Debug/ClashOfClans.dll
-ClashOfClans/obj/Debug/ClashOfClans.pdb
-.vs/ClashOfClans/v15/.suo
-ClashOfClans/bin/ClashOfClans.dll
-ClashOfClans/bin/ClashOfClans.pdb
-ClashOfClans/obj/Debug/ClashOfClans.csprojResolveAssemblyReference.cache
-ClashOfClans/obj/Debug/ClashOfClans.dll
-ClashOfClans/obj/Debug/ClashOfClans.pdb
+*.suo
+*.dll
+*.pdb
+*.cache
