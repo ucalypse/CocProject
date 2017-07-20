@@ -7,3 +7,5 @@ bin
 !packages/repositories.config
 /Backup/*
 UpgradeLog.htm
+*.cache
+*.pdb
