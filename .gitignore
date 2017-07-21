@@ -2,3 +2,6 @@
 *.dll
 *.pdb
 *.cache
+ClashOfClans/bin
+ClashOfClans/obj/Debug
+.vs
