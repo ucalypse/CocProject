@@ -2,6 +2,6 @@
 *.dll
 *.pdb
 *.cache
-ClashOfClans/bin
+ClashOfClans/bin/
 ClashOfClans/obj/Debug/*.cache
 .vs/ClashOfClans/v15/*.suo
