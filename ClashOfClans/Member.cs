@@ -1,8 +1,9 @@
-﻿using RestSharp.Deserializers;
+﻿using Microsoft.WindowsAzure.Storage.Table;
+using RestSharp.Deserializers;
 
 namespace ClashOfClans
 {
-    public class Member
+    public class Member : TableEntity
     {
         [DeserializeAs(Name = "name")]
         public string Name { get; set; }

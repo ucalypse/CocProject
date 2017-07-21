@@ -9,6 +9,8 @@ namespace ClashOfClans.Controllers
     {
 
         ApiCall apiCall = new ApiCall();
+        QueryTable queryTable = new QueryTable();
+
         // GET: TownHall
         public ActionResult ThreeThrough6()
         {
@@ -23,7 +25,7 @@ namespace ClashOfClans.Controllers
 
             foreach (var member in members)
             {
-                membersWithInfo.Add(apiCall.GetPlayerInfo(member.PlayerTag));
+                membersWithInfo.Add(queryTable.GetPlayerInfo(member.PlayerTag));
             }
 
             var filteredList = apiCall.FilterMembers(membersWithInfo, 6);
