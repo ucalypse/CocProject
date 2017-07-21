@@ -2,7 +2,7 @@
 
 namespace ClashOfClans
 {
-    public class Member
+    public class Member : TableEntity
     {
         [DeserializeAs(Name = "name")]
         public string Name { get; set; }

@@ -3,5 +3,5 @@
 *.pdb
 *.cache
 ClashOfClans/bin
-ClashOfClans/obj/Debug
-.vs
+ClashOfClans/obj/Debug/*.cache
+.vs/ClashOfClans/v15/*.suo
