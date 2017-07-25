@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace ClashOfClans
 {
@@ -30,7 +32,7 @@ namespace ClashOfClans
             CloudTable table = client.GetTableReference("Members");
             TableQuery<Member> query = new TableQuery<Member>()
                 .Where(TableQuery.GenerateFilterCondition("Tag", QueryComparisons.Equal, playerTag));
-
+            var member = table.ExecuteQuery(query).Single();
             return table.ExecuteQuery(query).Single();
         }
     }
