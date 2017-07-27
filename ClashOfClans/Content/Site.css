@@ -69,21 +69,24 @@ footer {
     text-align: center;
 }
 #memberTable.td{
-    background-color: chocolate;
+    background-color: white;
     border: 5px solid black;
     padding-right: 10px;
 }
 
 .clanRules {
-    color: red;
+     color: red;
 }
-#lowerMembers {
-    font-family: fantasy;
-    font-size: 24px;
-}
+
 p {
     font-weight: bolder;
 }
 .jumbo {
     background-color: red;
+}
+label {
+    background-color: gray;
+    padding: 20px;
+    font-family: fantasy;
+    font-size: 24px;
 }
