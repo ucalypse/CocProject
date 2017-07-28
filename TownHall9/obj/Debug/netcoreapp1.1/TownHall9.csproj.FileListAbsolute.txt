@@ -4,3 +4,6 @@ C:\projects\CocProject\TownHall9\bin\Debug\netcoreapp1.1\TownHall9.runtimeconfig
 C:\projects\CocProject\TownHall9\bin\Debug\netcoreapp1.1\TownHall9.dll
 C:\projects\CocProject\TownHall9\obj\Debug\netcoreapp1.1\TownHall9.csprojResolveAssemblyReference.cache
 C:\projects\CocProject\TownHall9\obj\Debug\netcoreapp1.1\TownHall9.AssemblyInfo.cs
+C:\projects\CocProject\TownHall9\bin\Debug\netcoreapp1.1\TownHall9.pdb
+C:\projects\CocProject\TownHall9\obj\Debug\netcoreapp1.1\TownHall9.dll
+C:\projects\CocProject\TownHall9\obj\Debug\netcoreapp1.1\TownHall9.pdb
