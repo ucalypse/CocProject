@@ -63,13 +63,13 @@ textarea {
 
 #memberTable {
     float: right;   
+    background-color: white;
 }
 
 footer {
     text-align: center;
 }
 #memberTable.td{
-    background-color: white;
     border: 5px solid black;
     padding-right: 10px;
 }

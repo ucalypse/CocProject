@@ -16,7 +16,8 @@ namespace ClashOfClans.ApiCalls
             var azureRequest = new RestRequest("GetClanInfo?code=CcCrot5q10/R8WKilALr1UANRmI413gRkKqeTbJjAxxy5oh3AeGoIg==", Method.GET);
             azureRequest.AddHeader("Accept", "application/json");
             var response = azureClient.Execute<ClanListViewModel>(azureRequest);
-            return response.Data.Members;
+            //return response.Data.Members;
+            return new List<Member>();
         }
         public List<Member> FilterMembers(List<Member> filterList, int townHallLevel)
         {
