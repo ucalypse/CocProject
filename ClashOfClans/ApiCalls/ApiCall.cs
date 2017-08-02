@@ -32,5 +32,10 @@ namespace ClashOfClans.ApiCalls
             }
             return filteredList;
         }
+
+        public Member GetPlayerInfo(string playerTag)
+        {
+            return new Member();
+        }
     }
 }

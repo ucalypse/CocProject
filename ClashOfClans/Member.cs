@@ -3,7 +3,7 @@ using RestSharp.Deserializers;
 
 namespace ClashOfClans
 {
-    public class Member : TableEntity
+    public class Member
     {
         [DeserializeAs(Name = "name")]
         public string Name { get; set; }

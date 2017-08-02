@@ -12,7 +12,6 @@ namespace ClashOfClans.ApiCalls
     public class ApiTests
     {
         ApiCall apiCalls = new ApiCall();
-        private QueryTable query = new QueryTable();
 
         [Test]
         public void getClans_Returns_Clan()
@@ -23,7 +22,7 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void getPlayerInfo_Returns_Info()
         {
-            var expected = query.GetPlayerInfo("#RPP222JV");
+            var expected = apiCalls.GetPlayerInfo("#RPP222JV");
             Assert.That(expected.Name, Is.EqualTo("Dada"));
             Assert.That(expected.TownHallLevel, Is.EqualTo(11));
         }

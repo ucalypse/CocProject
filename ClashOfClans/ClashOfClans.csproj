@@ -219,11 +219,14 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryTable.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ApiCalls\Tests\ApiTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ClashOfClans.mdf" />
+    <Content Include="App_Data\ClashOfClans_log.ldf">
+      <DependentUpon>ClashOfClans.mdf</DependentUpon>
+    </Content>
     <Content Include="bin\ClashOfClans.dll" />
     <Content Include="bin\ClashOfClans.pdb" />
     <Content Include="Content\bootstrap.css" />
@@ -302,9 +305,7 @@
     <Content Include="Views\TownHall\TownHall10.cshtml" />
     <Content Include="Views\Home\Tutorials.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
