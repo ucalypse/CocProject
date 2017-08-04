@@ -201,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiCalls\ApiCall.cs" />
+    <Compile Include="Data\MemberContext.cs" />
+    <Compile Include="Data\MemberModel.cs" />
+    <Compile Include="Data\Queries.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -315,6 +318,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <PropertyGroup>

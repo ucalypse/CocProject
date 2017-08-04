@@ -35,6 +35,18 @@ namespace ClashOfClans.ApiCalls
             var expected = apiCalls.FilterMembers(testMembers, 6);
             Assert.That(expected.Count, Is.EqualTo(2));
         }
+
+        [Test]
+        public void PopulateMembers_Populates_Members()
+        {
+            var testMembers = new List<Member>
+            {
+                new Member {Name = "Dada"},
+                new Member {Name = "Steve"},
+                new Member {Name = "Wah"}
+            };
+            var sampleData = apiCalls;
+        }
        
     }
 }
