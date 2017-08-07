@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ClashOfClans.Controllers;
+using ClashOfClans.Data;
 using ClashOfClans.Models;
 using NUnit.Framework;
 
@@ -39,13 +40,18 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void PopulateMembers_Populates_Members()
         {
+            Queries queries = new Queries();
             var testMembers = new List<Member>
             {
                 new Member {Name = "Dada"},
                 new Member {Name = "Steve"},
                 new Member {Name = "Wah"}
             };
-            var sampleData = apiCalls;
+            foreach (var testMember in testMembers)
+            {
+                queries.PopulateMembers(testMember);
+            }
+            
         }
        
     }
