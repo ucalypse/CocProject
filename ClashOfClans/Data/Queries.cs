@@ -20,9 +20,8 @@ namespace ClashOfClans.Data
 
         public Member RetrieveMember(string playerTag)
         {
-            //var query = db.Members.Where(n => n.PlayerTag = playerTag).Single();
-            //return query;
-            return new Member();
+            var query = db.Members.Where(n => n.PlayerTag == playerTag).Single();
+            return query;
         }
     }
 }

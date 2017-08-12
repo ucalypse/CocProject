@@ -13,6 +13,7 @@ namespace ClashOfClans.ApiCalls
     public class ApiTests
     {
         ApiCall apiCalls = new ApiCall();
+        Queries queries = new Queries();
 
         [Test]
         public void getClans_Returns_Clan()
@@ -36,20 +37,30 @@ namespace ClashOfClans.ApiCalls
             var expected = apiCalls.FilterMembers(testMembers, 6);
             Assert.That(expected.Count, Is.EqualTo(2));
         }
-
         [Test]
         public void PopulateMembers_Populates_Members()
         {
-            Queries queries = new Queries();
-            var testMembers = new List<Member>
-            {
-                new Member {Name = "Dada"},
-                new Member {Name = "Steve"},
-                new Member {Name = "Wah"}
-            };
+            var testMembers = new List<Member>{new Member{Name= "Dada", TownHallLevel = 6}, new Member{Name = "Wah", TownHallLevel = 9}, new Member{Name = "Wally", TownHallLevel = 2}, new Member{Name = "Brutus", TownHallLevel = 10}};
             foreach (var testMember in testMembers)
             {
                 queries.PopulateMembers(testMember);
+            }
+            
+        }
+
+        [Test]
+        public void RetrieveMembers_Populates_Members()
+        {
+            
+            var testMembers = new List<Member>
+            {
+                new Member {Name = "Dada",PlayerTag = "123"},
+                new Member {Name = "Steve",PlayerTag = "456"},
+                new Member {Name = "Wah",PlayerTag = "789"}
+            };
+            foreach (var member in testMembers)
+            {
+                queries.RetrieveMember(member.PlayerTag);
             }
             
         }

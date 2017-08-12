@@ -5,7 +5,7 @@ namespace ClashOfClans
 {
     public class Member
     {
-        public int MemberId { get; set; }
+        public int Id { get; set; }
 
         [DeserializeAs(Name = "name")]
         public string Name { get; set; }
