@@ -8,14 +8,16 @@ namespace ClashOfClans.Data
     public class Queries
     {
         MemberContext db = new MemberContext();
-        public bool PopulateMembers(Member m)
+        public void PopulateMembers(List<Member> m)
         {
             using (db)
             {
-                db.Members.Add(m);
-                db.SaveChanges();
+                foreach (var item in m)
+                {
+                    db.Members.Add(item);
+                    db.SaveChanges();
+                }
             }
-            return true;
         }
 
         public Member RetrieveMember(string playerTag)

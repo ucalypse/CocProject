@@ -40,12 +40,9 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void PopulateMembers_Populates_Members()
         {
-            var testMembers = new List<Member>{new Member{Name= "Dada", TownHallLevel = 6}, new Member{Name = "Wah", TownHallLevel = 9}, new Member{Name = "Wally", TownHallLevel = 2}, new Member{Name = "Brutus", TownHallLevel = 10}};
-            foreach (var testMember in testMembers)
-            {
-                queries.PopulateMembers(testMember);
-            }
-            
+            var testMembers = new List<Member>{new Member{Name= "Dada", TownHallLevel = 6, WarStars = 123}, new Member{Name = "Wah", TownHallLevel = 9}, new Member{Name = "Wally", TownHallLevel = 2}, new Member{Name = "Brutus", TownHallLevel = 10}};
+           
+                queries.PopulateMembers(testMembers);
         }
 
         [Test]
