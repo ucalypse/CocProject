@@ -304,3 +304,8 @@ C:\projects\CocProject\ClashOfClans\bin\ko\System.Spatial.resources.dll
 C:\projects\CocProject\ClashOfClans\bin\ru\System.Spatial.resources.dll
 C:\projects\CocProject\ClashOfClans\bin\zh-Hans\System.Spatial.resources.dll
 C:\projects\CocProject\ClashOfClans\bin\zh-Hant\System.Spatial.resources.dll
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.initialMigration.resources
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.csproj.GenerateResource.Cache
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.changeColumns.resources
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.additionalSetup.resources
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.additionChanges.resources

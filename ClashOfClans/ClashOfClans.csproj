@@ -217,6 +217,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MemberMapper.cs" />
+    <Compile Include="Migrations\201708141606146_initialMigration.cs" />
+    <Compile Include="Migrations\201708141606146_initialMigration.Designer.cs">
+      <DependentUpon>201708141606146_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708150331034_changeColumns.cs" />
+    <Compile Include="Migrations\201708150331034_changeColumns.Designer.cs">
+      <DependentUpon>201708150331034_changeColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708150358215_additionalSetup.cs" />
+    <Compile Include="Migrations\201708150358215_additionalSetup.Designer.cs">
+      <DependentUpon>201708150358215_additionalSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708150404521_additionChanges.cs" />
+    <Compile Include="Migrations\201708150404521_additionChanges.Designer.cs">
+      <DependentUpon>201708150404521_additionChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -227,10 +244,6 @@
     <Compile Include="ApiCalls\Tests\ApiTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ClashOfClans.mdf" />
-    <Content Include="App_Data\ClashOfClans_log.ldf">
-      <DependentUpon>ClashOfClans.mdf</DependentUpon>
-    </Content>
     <Content Include="bin\ClashOfClans.dll" />
     <Content Include="bin\ClashOfClans.pdb" />
     <Content Include="Content\bootstrap.css" />
@@ -309,7 +322,20 @@
     <Content Include="Views\TownHall\TownHall10.cshtml" />
     <Content Include="Views\Home\Tutorials.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708141606146_initialMigration.resx">
+      <DependentUpon>201708141606146_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708150331034_changeColumns.resx">
+      <DependentUpon>201708150331034_changeColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708150358215_additionalSetup.resx">
+      <DependentUpon>201708150358215_additionalSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708150404521_additionChanges.resx">
+      <DependentUpon>201708150404521_additionChanges.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -321,6 +347,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

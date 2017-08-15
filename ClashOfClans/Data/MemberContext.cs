@@ -8,6 +8,6 @@ namespace ClashOfClans.Data
 {
     public class MemberContext : DbContext
     {
-        public DbSet<Member> Members { get; set; }
+        public DbSet<MemberModel> Members { get; set; }
     }
 }

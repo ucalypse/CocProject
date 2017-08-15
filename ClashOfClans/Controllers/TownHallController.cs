@@ -2,6 +2,7 @@
 using ClashOfClans.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using ClashOfClans.Data;
 
 namespace ClashOfClans.Controllers
 {
@@ -9,6 +10,8 @@ namespace ClashOfClans.Controllers
     {
 
         ApiCall apiCall = new ApiCall();
+        Queries database = new Queries();
+        MemberMapper mapper = new MemberMapper();
         
         // GET: TownHall
         public ActionResult ThreeThrough6()
@@ -33,7 +36,8 @@ namespace ClashOfClans.Controllers
             {
                 Members = filteredList
             };
-
+            var convertedMembers = mapper.MapToMemberModel(membersWithInfo);
+            database.PopulateMembers(convertedMembers);
             return Json(model, JsonRequestBehavior.AllowGet);
         }
         public ActionResult TownHall7()

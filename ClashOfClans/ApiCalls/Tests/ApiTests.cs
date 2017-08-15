@@ -40,7 +40,7 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void PopulateMembers_Populates_Members()
         {
-            var testMembers = new List<Member>{new Member{Name= "Dada", TownHallLevel = 6, WarStars = 123}, new Member{Name = "Wah", TownHallLevel = 9}, new Member{Name = "Wally", TownHallLevel = 2}, new Member{Name = "Brutus", TownHallLevel = 10}};
+            var testMembers = new List<MemberModel>{new MemberModel{Name= "Dada", TownHallLevel = 6, WarStars = 123}, new MemberModel{Name = "Wah", TownHallLevel = 9, PlayerTag = "#12345"}, new MemberModel{Name = "Wally", TownHallLevel = 2}, new MemberModel{Name = "Brutus", TownHallLevel = 10}};
            
                 queries.PopulateMembers(testMembers);
         }
@@ -48,18 +48,11 @@ namespace ClashOfClans.ApiCalls
         [Test]
         public void RetrieveMembers_Populates_Members()
         {
-            
-            var testMembers = new List<Member>
-            {
-                new Member {Name = "Dada",PlayerTag = "123"},
-                new Member {Name = "Steve",PlayerTag = "456"},
-                new Member {Name = "Wah",PlayerTag = "789"}
-            };
-            foreach (var member in testMembers)
-            {
-                queries.RetrieveMember(member.PlayerTag);
-            }
-            
+            var playerTag = "#12345";
+            var expected = "Wah";
+             var member = queries.RetrieveMember(playerTag);
+
+            Assert.That(member.Name,Is.EqualTo(expected));
         }
        
     }

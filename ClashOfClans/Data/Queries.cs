@@ -2,28 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ClashOfClans.ApiCalls;
 
 namespace ClashOfClans.Data
 {
     public class Queries
     {
+        MemberMapper mapper = new MemberMapper();
         MemberContext db = new MemberContext();
-        public void PopulateMembers(List<Member> m)
+        public void PopulateMembers(List<MemberModel> m)
         {
+            db.Database.ExecuteSqlCommand("TRUNCATE TABLE Members");
             using (db)
             {
-                foreach (var item in m)
-                {
-                    db.Members.Add(item);
+                    db.Database.Log = Console.WriteLine;
+                    db.Members.AddRange(m);
                     db.SaveChanges();
-                }
             }
         }
 
         public Member RetrieveMember(string playerTag)
         {
-            var query = db.Members.Where(n => n.PlayerTag == playerTag).Single();
-            return query;
+            var member = mapper.MapToMember(db.Members.Where(n => n.PlayerTag == playerTag).ToList());
+            return member.First();
         }
     }
 }
