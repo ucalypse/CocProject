@@ -26,5 +26,10 @@ namespace ClashOfClans.Data
             var member = mapper.MapToMember(db.Members.Where(n => n.PlayerTag == playerTag).ToList());
             return member.First();
         }
+
+        public List<MemberModel> GetAllMembers()
+        {
+            return db.Members.ToList();
+        }
     }
 }

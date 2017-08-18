@@ -2,20 +2,21 @@
 using System.Linq;
 using System.Web.Mvc;
 using ClashOfClans.ApiCalls;
+using ClashOfClans.Data;
 using ClashOfClans.Models;
 
 namespace ClashOfClans.Controllers
 {
     public partial class HomeController : Controller
     {
-        ApiCall apiCall = new ApiCall();
+        Queries queries = new Queries();
 
         public ActionResult Index()
         {
             var view = new ClanListViewModel
             {
-                Members = apiCall.GetOurClan()
-        };
+                Members = queries.GetAllMembers();
+            };
             return View(view);
         }
 

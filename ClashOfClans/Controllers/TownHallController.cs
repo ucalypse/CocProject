@@ -22,12 +22,12 @@ namespace ClashOfClans.Controllers
         [HttpGet]
         public JsonResult GetFilteredList()
         {
-            var members = apiCall.GetOurClan();
+            var members = database.GetAllMembers();
             var membersWithInfo = new List<Member>();
 
             foreach (var member in members)
             {
-                membersWithInfo.Add(apiCall.GetPlayerInfo(member.PlayerTag));
+                membersWithInfo.Add(database.RetrieveMember(member.PlayerTag));
             }
 
             var filteredList = apiCall.FilterMembers(membersWithInfo, 6);
@@ -37,7 +37,7 @@ namespace ClashOfClans.Controllers
                 Members = filteredList
             };
             var convertedMembers = mapper.MapToMemberModel(membersWithInfo);
-            database.PopulateMembers(convertedMembers);
+          //  database.PopulateMembers(convertedMembers);
             return Json(model, JsonRequestBehavior.AllowGet);
         }
         public ActionResult TownHall7()
