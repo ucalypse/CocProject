@@ -34,10 +34,10 @@ namespace ClashOfClans.Controllers
 
             var model = new ClanListViewModel
             {
-                Members = filteredList
+                Members = mapper.MapToMemberModel(filteredList)
             };
             var convertedMembers = mapper.MapToMemberModel(membersWithInfo);
-          //  database.PopulateMembers(convertedMembers);
+           database.PopulateMembers(convertedMembers);
             return Json(model, JsonRequestBehavior.AllowGet);
         }
         public ActionResult TownHall7()

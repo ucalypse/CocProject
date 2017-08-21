@@ -27,9 +27,10 @@ namespace ClashOfClans.Data
             return member.First();
         }
 
-        public List<MemberModel> GetAllMembers()
+        public List<Member> GetAllMembers()
         {
-            return db.Members.ToList();
+            
+            return mapper.MapToMember(db.Members.ToList());
         }
     }
 }

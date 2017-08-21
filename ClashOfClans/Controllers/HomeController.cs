@@ -10,12 +10,13 @@ namespace ClashOfClans.Controllers
     public partial class HomeController : Controller
     {
         Queries queries = new Queries();
+        MemberMapper mapper = new MemberMapper();
 
         public ActionResult Index()
         {
             var view = new ClanListViewModel
             {
-                Members = queries.GetAllMembers();
+                Members = mapper.MapToMemberModel(queries.GetAllMembers())
             };
             return View(view);
         }
