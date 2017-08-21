@@ -268,3 +268,5 @@ C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.csproj.GenerateResour
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.changeColumns.resources
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.additionalSetup.resources
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.additionChanges.resources
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.refactoring.resources
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.whoops.resources

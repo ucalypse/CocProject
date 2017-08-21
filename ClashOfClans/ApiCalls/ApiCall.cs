@@ -7,10 +7,11 @@ namespace ClashOfClans.ApiCalls
 {
     public class ApiCall
     {
+        Queries database = new Queries();
         RestClient client = new RestClient("https://api.clashofclans.com/v1/");
-        string token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjQ5ODZmNDE1LTJjNWQtNDI2Ny05Y2U0LTNhNzA1ODYwMzAwMyIsImlhdCI6MTUwMzA4MzU5Mywic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE1Mi4xNzkuNy4yMDYiLCIxMy42NS40Mi4zNSIsIjEzLjY1LjQyLjQyIiwiMTMuODQuMTgxLjQ3IiwiMTMuNjUuNDEuMTI3Il0sInR5cGUiOiJjbGllbnQifV19.qTJbcUfBTRpEh2Hrx-K600GgnPYtTpJVAzZWjFODAovTdVxc4Cww35Yt5XdNf_nz-1NlC7abuZw9F9XParHnLA";
+        string token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjdiM2Y4M2ZlLWRmNDAtNDVkYS05MjYzLTU0ZTdmNDRmYzFmNiIsImlhdCI6MTUwMzI4NTUyMCwic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjk5LjE2NC4xNzYuMzUiLCIxMy42NS40MS4xMjciLCIxMy44NC4xODEuNDciLCIxMy42NS40Mi40MiIsIjEzLjY1LjQyLjM1Il0sInR5cGUiOiJjbGllbnQifV19.VAvdlOdT0zqjAi1ZdingQ0Id-wha25EqSZyh0CKI15UYvlyM1jKcf6icB49QKiSUzFItflIt9Ih00WGnXqbjHg";
 
-        public List<MemberModel> GetOurClan()
+        public void ClanApiCall()
         {
             var request = new RestRequest("clans/{clanTag}/members", Method.GET);
 
@@ -18,7 +19,13 @@ namespace ClashOfClans.ApiCalls
             request.AddHeader("Authorization", token);
             request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
             var response = client.Execute<ClanListViewModel>(request);
-            return response.Data.Members;
+            var newList = new List<MemberModel>();
+           
+            foreach (var member in response.Data.Members)
+            {
+                newList.Add(PlayerApiCall(member.PlayerTag));
+            }
+            database.PopulateMembers(newList);
         }
         public List<Member> FilterMembers(List<Member> filterList, int townHallLevel)
         {
@@ -33,7 +40,7 @@ namespace ClashOfClans.ApiCalls
             return filteredList;
         }
 
-        public MemberModel GetPlayerInfo(string playerTag)
+        public MemberModel PlayerApiCall(string playerTag)
         {
             RestClient client = new RestClient("https://api.clashofclans.com/v1/");
             var request = new RestRequest("players/{playerTag}", Method.GET);

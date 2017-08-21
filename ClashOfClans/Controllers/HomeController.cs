@@ -9,6 +9,7 @@ namespace ClashOfClans.Controllers
 {
     public partial class HomeController : Controller
     {
+        ApiCall apiCall = new ApiCall();
         Queries queries = new Queries();
         MemberMapper mapper = new MemberMapper();
 
@@ -16,7 +17,7 @@ namespace ClashOfClans.Controllers
         {
             var view = new ClanListViewModel
             {
-                Members = mapper.MapToMemberModel(queries.GetAllMembers())
+                Members = queries.GetAllMembers()
             };
             return View(view);
         }
@@ -26,6 +27,12 @@ namespace ClashOfClans.Controllers
             ViewBag.Message = "Video Tutorials";
 
             return View();
+        }
+
+        [HttpGet]
+        public void UpdateClanList()
+        {
+             apiCall.ClanApiCall();
         }
     }
 }
