@@ -34,5 +34,18 @@ namespace ClashOfClans.Data
             MemberContext db = new MemberContext();
             return db.Members.ToList();
         }
+
+        public List<Member> FilterMembers(List<Member> filterList, int townHallLevel)
+        {
+            var filteredList = new List<Member>();
+            foreach (var member in filterList)
+            {
+                if (member.TownHallLevel <= townHallLevel)
+                {
+                    filteredList.Add(member);
+                }
+            }
+            return filteredList;
+        }
     }
 }

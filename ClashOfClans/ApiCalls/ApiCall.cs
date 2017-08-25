@@ -27,19 +27,6 @@ namespace ClashOfClans.ApiCalls
             }
             database.PopulateMembers(newList);
         }
-        public List<Member> FilterMembers(List<Member> filterList, int townHallLevel)
-        {
-            var filteredList = new List<Member>();
-            foreach (var member in filterList)
-            {
-                if (member.TownHallLevel <= townHallLevel)
-                {
-                    filteredList.Add(member);
-                }
-            }
-            return filteredList;
-        }
-
         public MemberModel PlayerApiCall(string playerTag)
         {
             RestClient client = new RestClient("https://api.clashofclans.com/v1/");

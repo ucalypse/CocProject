@@ -9,7 +9,6 @@ namespace ClashOfClans.Controllers
     public class TownHallController : Controller
     {
 
-        ApiCall apiCall = new ApiCall();
         Queries database = new Queries();
         MemberMapper mapper = new MemberMapper();
         
@@ -30,7 +29,7 @@ namespace ClashOfClans.Controllers
                 membersWithInfo.Add(database.RetrieveMember(member.PlayerTag));
             }
 
-            var filteredList = apiCall.FilterMembers(membersWithInfo, 6);
+            var filteredList = database.FilterMembers(membersWithInfo, 6);
 
             var model = new ClanListViewModel
             {
