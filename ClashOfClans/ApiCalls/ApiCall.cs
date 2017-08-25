@@ -39,5 +39,17 @@ namespace ClashOfClans.ApiCalls
             var response = client.Execute<MemberModel>(request);
             return response.Data;
         }
+
+        public CurrentWar GetCurrentWar(string clanTag)
+        {
+            var request = new RestRequest("clans/{clanTag}/currentwar", Method.GET);
+
+            request.AddHeader("Accept", "application/json");
+            request.AddHeader("Authorization", token);
+            request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
+            var response = client.Execute<ClanListViewModel>(request);
+
+            return new CurrentWar();
+        }
     }
 }

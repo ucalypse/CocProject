@@ -29,6 +29,12 @@ namespace ClashOfClans.Controllers
             return View();
         }
 
+        public ActionResult WarRoom()
+        {
+            ViewBag.Message = " War Room";
+            return View();
+        }
+
         [HttpGet]
         public void UpdateClanList()
         {
