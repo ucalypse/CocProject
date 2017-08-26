@@ -90,3 +90,6 @@ label {
     font-family: fantasy;
     font-size: 24px;
 }
+table {
+    background-color: lightgray;
+}
