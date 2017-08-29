@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using ClashOfClans.ApiCalls;
@@ -11,7 +12,7 @@ namespace ClashOfClans.Controllers
     {
         ApiCall apiCall = new ApiCall();
         Queries queries = new Queries();
-        MemberMapper mapper = new MemberMapper();
+        CurrentWar currentWar = new CurrentWar();
 
         public ActionResult Index()
         {
@@ -31,6 +32,7 @@ namespace ClashOfClans.Controllers
 
         public ActionResult WarRoom()
         {
+            apiCall.GetCurrentWar("#8UJGPROJ");
             ViewBag.Message = " War Room";
             return View();
         }
@@ -39,6 +41,16 @@ namespace ClashOfClans.Controllers
         public void UpdateClanList()
         {
              apiCall.ClanApiCall();
+        }
+
+        [HttpGet]
+        public JsonResult ConvertedDateTime()
+        {
+            currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
+           // var convertedTime = currentWar.EndTime.AddHours();
+            var rawString =  currentWar.EndTime.ToString();
+             
+            return Json(rawString.Substring(0, 17), JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -1,8 +1,45 @@
-﻿
+﻿@model CurrentWar
 @{
     ViewBag.Title = "WarRoom";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>WarRoom</h2>
+<body>
+<div class="jumbotron">
+    @if (Model.State == "inWar")
+    {
+        <h2>Time Until War Ends</h2>
+    }
+    <div class="container" id="demo"></div>
+</div>
+</body>
+<script>
+// Set the date we're counting down to
+    $(function () {
+        $.getJSON('/Home/ConvertedDateTime')
+            .done(function (response) {
+                var countDownDate = new Date(response).getTime();
+                // Update the count down every 1 second
+                var x = setInterval(function() {
 
+                        var now = new Date().getTime();
+
+                        var distance = countDownDate - now;
+
+                        var seconds = Math.floor( (distance/1000) % 60 );
+                        var minutes = Math.floor( (distance/1000/60) % 60 );
+                        var hours = Math.floor( (distance/(1000*60*60)));
+
+                        $("#demo").html(
+                            (hours + 8) + "h " + minutes + "m " + seconds + "s ");
+
+                        if (distance < 0) {
+                            clearInterval(x);
+                            $("#demo").html("War Over");
+                        }
+                    },
+                1000);
+        });
+    });
+</script>
