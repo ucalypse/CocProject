@@ -93,3 +93,7 @@ label {
 table {
     background-color: lightgray;
 }
+#warMessage {
+    font-family: fantasy;
+    color: red;
+}

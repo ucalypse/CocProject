@@ -9,13 +9,16 @@
 <div class="jumbotron">
     @if (Model.State == "inWar")
     {
-        <h2>Time Until War Ends</h2>
+        <h2 id="warMessage">Time Until War Ends</h2>
+    }
+    else
+    {
+        <h2>Time Until War Begins</h2>
     }
     <div class="container" id="demo"></div>
 </div>
 </body>
 <script>
-// Set the date we're counting down to
     $(function () {
         $.getJSON('/Home/ConvertedDateTime')
             .done(function (response) {

@@ -271,6 +271,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
+    <Content Include="fonts\October Twilight - OTF.otf" />
+    <Content Include="fonts\October Twilight - TTF.ttf" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
