@@ -47,5 +47,15 @@ namespace ClashOfClans.Data
             }
             return filteredList;
         }
+
+        public void SetAdmin()
+        {
+            AdminContext db = new AdminContext();
+            using (db)
+            {
+                db.Admins.Add(new AdminModel {UserName = "Admin", Password = "weedgood"});
+                db.SaveChanges();
+            }
+        }
     }
 }

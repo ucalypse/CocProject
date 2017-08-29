@@ -200,11 +200,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\AdminModel.cs" />
     <Compile Include="ApiCalls\ApiCall.cs" />
     <Compile Include="ApiCalls\Tests\CurrentWarTests.cs" />
     <Compile Include="CurrentWar\CurrentWar.cs" />
     <Compile Include="CurrentWar\MembersInWar.cs" />
     <Compile Include="CurrentWar\Clan.cs" />
+    <Compile Include="Data\AdminContext.cs" />
     <Compile Include="Data\MemberContext.cs" />
     <Compile Include="Data\MemberModel.cs" />
     <Compile Include="Data\Queries.cs" />
@@ -241,6 +243,10 @@
     <Compile Include="Migrations\201708210336146_whoops.cs" />
     <Compile Include="Migrations\201708210336146_whoops.Designer.cs">
       <DependentUpon>201708210336146_whoops.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708292215105_addingAdmin.cs" />
+    <Compile Include="Migrations\201708292215105_addingAdmin.Designer.cs">
+      <DependentUpon>201708292215105_addingAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708210336146_whoops.resx">
       <DependentUpon>201708210336146_whoops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708292215105_addingAdmin.resx">
+      <DependentUpon>201708292215105_addingAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

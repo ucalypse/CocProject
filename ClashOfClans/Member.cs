@@ -1,7 +1,4 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
-using RestSharp.Deserializers;
-
-namespace ClashOfClans
+﻿namespace ClashOfClans
 {
     public class Member
     {
