@@ -46,8 +46,14 @@ namespace ClashOfClans.Controllers
         public JsonResult ConvertedDateTime()
         {
             currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
-           // var convertedTime = currentWar.EndTime.AddHours();
-            var rawString =  currentWar.EndTime.ToString();
+            var convertedTime = currentWar.EndTime;
+            if (currentWar.State == "preparation")
+            {
+                convertedTime = currentWar.EndTime.AddHours(-24);
+            }
+           
+            //  var rawString =  currentWar.EndTime.ToString();
+            var rawString =  convertedTime.ToString();
              
             return Json(rawString.Substring(0, 17), JsonRequestBehavior.AllowGet);
         }
