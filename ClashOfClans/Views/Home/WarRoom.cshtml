@@ -4,57 +4,74 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>WarRoom</h2>
+<h2>War Room</h2>
 <body>
-<div class="jumbotron">
-    @if (Model.State == "inWar")
-    {
-        <h2 id="warMessage">Time Until War Ends</h2>
-    }
-    else
-    {
-        <h2>Time Until War Begins</h2>
-    }
-    <div class="container" id="renderTable"></div>
+    <div class="jumbotron">
+        @if (Model.State == "inWar")
+        {
+            <h2 id="warMessage">Time Until War Ends</h2>
+        }
+        else
+        {
+            <h2>Time Until War Begins</h2>
+        }
+
+        <div id="renderTime"></div>
+    </div>
+<div id="popupContact" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeButton">&times;</span>
+        @using (Html.BeginForm("SendWarPlan", "Home"))
+        {
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Member Name"/>
+                <textarea style="height:300px;" class="form-control" placeholder="Enter War Plan"></textarea>
+                <input type="submit"/>
+            </div>
+        }
+        
+    </div>
 </div>
-<div id="popupContact" class="col-md-2">
-    <form action="/Home/SendWarPlan" id="form" method="post" name="form">
-        <h2>War Plan</h2>
-        <hr>
-        <input id="name" name="name" placeholder="Name" type="text">
-        <textarea id="msg" name="message" placeholder="Message"></textarea>
-        <a href="javascript:%20check_empty()" id="submit">Send</a>
-    </form>
+<div id="displayWarPlan" class="col-md-6">
+    <h3>The War Plan...</h3>
+    <button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button>
+    <img src="~/Content/Images/parchment.jpg" height="700" width="500"/>
 </div>
-    <div id="displayWarPlan" class="col-md-2"></div>
 </body>
 <script>
-    $(function () {
-        $("#popupContact").hide();
+    $(function() {
         $.getJSON('/Home/ConvertedDateTime')
-            .done(function (response) {
+            .done(function(response) {
                 var countDownDate = new Date(response).getTime();
-                // Update the count down every 1 second
                 var x = setInterval(function() {
 
                         var now = new Date().getTime();
 
                         var distance = countDownDate - now;
 
-                        var seconds = Math.floor( (distance/1000) % 60 );
-                        var minutes = Math.floor( (distance/1000/60) % 60 );
-                        var hours = Math.floor( (distance/(1000*60*60)));
+                        var seconds = Math.floor((distance / 1000) % 60);
+                        var minutes = Math.floor((distance / 1000 / 60) % 60);
+                        var hours = Math.floor((distance / (1000 * 60 * 60)));
 
-                        $("#demo").html(
+                        $("#renderTime").html(
                             (hours + 8) + "h " + minutes + "m " + seconds + "s ");
 
                         if (distance < 0) {
                             clearInterval(x);
-                            $("#renderTable").html("War Over");
+                            $("#renderTime").html("War Over");
                         }
-                    },
-                    1000);
+                },
+                1000);
             });
+        $("#button").click(function() {
+            $("#popupContact").css("display", "block");
+        });
+
+        $("#closeButton").click(function () {
+            $("#popupContact").css("display", "none");
+        });
     });
+   
+   
 </script>
 

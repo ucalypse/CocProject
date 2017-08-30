@@ -97,7 +97,36 @@ table {
     font-family: fantasy;
     color: red;
 }
-h1,h2 {
+h1,h2, h3 {
     font-family: serif;
     color: Red;
+}
+#displayWarPlan {
+   
+}
+.modal {
+    display: none;
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: black;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
 }

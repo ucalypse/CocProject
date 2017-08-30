@@ -265,6 +265,7 @@
     <Content Include="Content\Images\ClashBackground.jpg" />
     <Content Include="Content\Images\firebackground.jpg" />
     <Content Include="Content\Images\homeBanner.jpg" />
+    <Content Include="Content\Images\parchment.jpg" />
     <Content Include="Content\Images\th3.jpg" />
     <Content Include="Content\Images\th4.jpg" />
     <Content Include="Content\Images\th5.jpg" />
