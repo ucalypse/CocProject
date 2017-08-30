@@ -57,5 +57,11 @@ namespace ClashOfClans.Controllers
              
             return Json(rawString.Substring(0, 17), JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public void SendWarPlan()
+        {
+            
+        }
     }
 }
