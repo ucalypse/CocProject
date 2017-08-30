@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using ClashOfClans.Data;
 using NUnit.Framework;
 
 namespace ClashOfClans.ApiCalls.Tests
@@ -24,16 +25,11 @@ namespace ClashOfClans.ApiCalls.Tests
             Assert.That(actual.Name, Is.EqualTo(expected));
         }
 
-        //[Test]
-        //public void GetCurrentWar_Returns_Correct_Time()
-        //{
-        //    var expected = "4:00";
-
-        //    var data = apiCalls.GetCurrentWar(clanTag);
-        //    var startTime = data.StartTime.ToString();
-        //    var endTime = currentWar.convertedDateTime(data.EndTime);
-
-        //    Assert.That(endTime, Is.EqualTo(expected));
-        //}
+        [Test]
+        public void SetAdmin()
+        {
+            Queries queries = new Queries();
+            queries.CreateAdmin();
+        }
     }
 }

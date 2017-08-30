@@ -47,5 +47,26 @@ namespace ClashOfClans.Data
             }
             return filteredList;
         }
+        public void CreateAdmin()
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                db.Admins.Add(new AdminModel {UserName = "admin", Password = "weedgood"});
+                db.SaveChanges();
+            }
+        }
+        public bool Authenticated(string userName, string password)
+        {
+            MemberContext db = new MemberContext();
+            if (!db.Admins.Where(n => n.UserName == userName).Single().Equals(null) &&
+                !db.Admins.Where(n => n.Password == password).Single().Equals(null))
+            {
+                return true;
+            }
+           
+            return false;
+        }
+       
     }
 }

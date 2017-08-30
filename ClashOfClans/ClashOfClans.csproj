@@ -205,6 +205,7 @@
     <Compile Include="CurrentWar\CurrentWar.cs" />
     <Compile Include="CurrentWar\MembersInWar.cs" />
     <Compile Include="CurrentWar\Clan.cs" />
+    <Compile Include="Data\AdminModel.cs" />
     <Compile Include="Data\MemberContext.cs" />
     <Compile Include="Data\MemberModel.cs" />
     <Compile Include="Data\Queries.cs" />
@@ -241,6 +242,14 @@
     <Compile Include="Migrations\201708210336146_whoops.cs" />
     <Compile Include="Migrations\201708210336146_whoops.Designer.cs">
       <DependentUpon>201708210336146_whoops.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708292227443_createAdmin.cs" />
+    <Compile Include="Migrations\201708292227443_createAdmin.Designer.cs">
+      <DependentUpon>201708292227443_createAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708292231234_renaming.cs" />
+    <Compile Include="Migrations\201708292231234_renaming.Designer.cs">
+      <DependentUpon>201708292231234_renaming.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -347,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708210336146_whoops.resx">
       <DependentUpon>201708210336146_whoops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708292227443_createAdmin.resx">
+      <DependentUpon>201708292227443_createAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708292231234_renaming.resx">
+      <DependentUpon>201708292231234_renaming.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
