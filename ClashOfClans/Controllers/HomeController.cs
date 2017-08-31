@@ -59,10 +59,10 @@ namespace ClashOfClans.Controllers
         }
 
         [HttpPost]
-        public ActionResult SendWarPlan(string memberName, string warPlan)
+        public JsonResult SendWarPlan(string memberName, string warPlan)
         {
            queries.PopulateWarPlan(memberName, warPlan);
-            return View("WarRoom", new WarViewModel{WarPlan = new WarPlanModel{MemberName = memberName, Plan = warPlan}});
+            return Json(new WarViewModel{WarPlan = new WarPlanModel{MemberName = memberName, Plan = warPlan}}, JsonRequestBehavior.AllowGet);
         }
     }
 }

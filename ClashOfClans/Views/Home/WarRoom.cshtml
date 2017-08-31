@@ -8,28 +8,25 @@
 <h2>War Room</h2>
 <body>
     <div class="jumbotron">
-        @if (Model.State == "inWar")
+        @*@if (Model.CurrentWar.State == "inWar")
         {
             <h2 id="warMessage">Time Until War Ends</h2>
         }
         else
         {
             <h2>Time Until War Begins</h2>
-        }
+        }*@
 
         <div id="renderTime"></div>
     </div>
 <div id="popupContact" class="modal">
     <div class="modal-content">
         <span class="close" id="closeButton">&times;</span>
-        @using (Html.BeginForm("SendWarPlan", "Home"))
-        {
-            <div class="form-group">
-                <input type="text" name="memberName" class="form-control" placeholder="Member Name"/>
-                <textarea style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
-                <input type="submit"/>
+       <div class="form-group">
+                <input type="text" id="memberName" name="memberName" class="form-control" placeholder="Member Name"/>
+                <textarea id="warPlan" style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
+                <button class="btn-primary" id="submitButton">Submit</button>
             </div>
-        }
         
     </div>
 </div>
@@ -70,6 +67,13 @@
 
         $("#closeButton").click(function () {
             $("#popupContact").css("display", "none");
+        });
+
+        $("#submitButton").click(function () {
+            $.post( "/Home/SendWarPlan", { memberName : $("#memberName").value, warPlan : $("#warPlan").value })
+                .done(function (data) {
+                    $("#popupContact").css("display: none");
+                });
         });
     });
    
