@@ -33,7 +33,7 @@ namespace ClashOfClans.Controllers
         public ActionResult WarRoom()
         {
             ViewBag.Message = " War Room";
-            return View(apiCall.GetCurrentWar("#8UJGPROJ"));
+            return View(new WarViewModel{CurrentWar = apiCall.GetCurrentWar("#8UJGPROJ")});
         }
 
         [HttpGet]
