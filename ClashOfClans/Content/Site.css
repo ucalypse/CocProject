@@ -102,7 +102,9 @@ h1,h2, h3 {
     color: Red;
 }
 #displayWarPlan {
-   
+    height: 700px;
+    background-image: url("Images/parchment.jpg");
+    background-size: cover;
 }
 .modal {
     display: none;

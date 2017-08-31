@@ -272,3 +272,4 @@ C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.refactorin
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.whoops.resources
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.createAdmin.resources
 C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.renaming.resources
+C:\projects\CocProject\ClashOfClans\obj\Debug\ClashOfClans.Migrations.addedWarPlan.resources

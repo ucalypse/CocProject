@@ -12,7 +12,7 @@ namespace ClashOfClans.Controllers
     {
         ApiCall apiCall = new ApiCall();
         Queries queries = new Queries();
-        CurrentWar currentWar = new CurrentWar();
+        WarViewModel war = new WarViewModel();
 
         public ActionResult Index()
         {
@@ -45,24 +45,24 @@ namespace ClashOfClans.Controllers
         [HttpGet]
         public JsonResult ConvertedDateTime()
         {
-            currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
-            var convertedTime = currentWar.EndTime;
-            if (currentWar.State == "preparation")
+            war.CurrentWar = apiCall.GetCurrentWar("#8UJGPROJ");
+            var convertedTime = war.CurrentWar.EndTime;
+            if (war.CurrentWar.State == "preparation")
             {
-                convertedTime = currentWar.EndTime.AddHours(-24);
+                convertedTime = war.CurrentWar.EndTime.AddHours(-24);
             }
            
-            //  var rawString =  currentWar.EndTime.ToString();
+            //  var rawString =  war.EndTime.ToString();
             var rawString =  convertedTime.ToString();
              
             return Json(rawString.Substring(0, 17), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public void SendWarPlan(string memberName, string warPlan)
+        public ActionResult SendWarPlan(string memberName, string warPlan)
         {
-            var mem = memberName;
-            var wah = warPlan;
+           queries.PopulateWarPlan(memberName, warPlan);
+            return View("WarRoom", new WarViewModel{WarPlan = new WarPlanModel{MemberName = memberName, Plan = warPlan}});
         }
     }
 }
