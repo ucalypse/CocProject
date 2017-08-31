@@ -102,9 +102,14 @@ h1,h2, h3 {
     color: Red;
 }
 #renderPlan {
-    height: 700px;
+    height: 750px;
     background-image: url("Images/parchment.jpg");
     background-size: cover;
+}
+#renderPlan p {
+    font-size: 16px;
+    padding: 20px;
+    word-wrap: normal;
 }
 .modal {
     display: none;
@@ -113,7 +118,7 @@ h1,h2, h3 {
 }
 
 .modal-content {
-    background-color: black;
+    background-color: darkgrey;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
