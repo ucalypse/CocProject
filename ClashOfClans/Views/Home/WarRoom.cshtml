@@ -25,9 +25,8 @@
         @using (Html.BeginForm("SendWarPlan", "Home"))
         {
             <div class="form-group">
-                @Html.TextBox("Member")
-                <input type="text" class="form-control" placeholder="Member Name"/>
-                <textarea style="height: 300px;" class="form-control" placeholder="Enter War Plan"></textarea>
+                <input type="text" name="memberName" class="form-control" placeholder="Member Name"/>
+                <textarea style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
                 <input type="submit"/>
             </div>
         }

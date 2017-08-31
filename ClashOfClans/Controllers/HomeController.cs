@@ -59,9 +59,10 @@ namespace ClashOfClans.Controllers
         }
 
         [HttpPost]
-        public void SendWarPlan()
+        public void SendWarPlan(string memberName, string warPlan)
         {
-            
+            var mem = memberName;
+            var wah = warPlan;
         }
     }
 }

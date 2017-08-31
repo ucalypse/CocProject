@@ -67,6 +67,17 @@ namespace ClashOfClans.Data
            
             return false;
         }
+
+        public void PopulateWarPlan(string memberName, string warPlan)
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                db.WarPlans.Add(new WarPlanModel {MemberName = memberName, Plan = warPlan});
+                db.SaveChanges();
+            }
+
+        }
        
     }
 }
