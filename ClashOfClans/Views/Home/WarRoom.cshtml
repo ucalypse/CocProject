@@ -30,9 +30,10 @@
         
     </div>
 </div>
-<div id="displayWarPlan" class="col-md-6">
+<div id="renderPlan" class="col-md-6">
     <h3>The War Plan...</h3>
-    <button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button>
+    <button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button><br/>
+    <p id="displayWarPlan">@Model.WarPlan.Plan</p>
    
 </div>
 </body>
@@ -71,10 +72,12 @@
 
         $("#submitButton").click(function () {
             var war = $("#warPlan").val();
-            $.post( "/Home/SendWarPlan", { memberName : $("#memberName").value, warPlan : war })
+            var member = $("#memberName").val();
+            $.post( "/Home/SendWarPlan", { memberName : member, warPlan : war })
                 .done(function (data) {
-                    $("#displayWarPlan").html("<p>" + war + "</p>");
-                    $("#popupContact").css("display: none");
+                    $("#displayWarPlan").html(member + "<br />");
+                    $("#displayWarPlan").html(war);
+                    $("#popupContact").css("display", "none");
                 });
         });
     });

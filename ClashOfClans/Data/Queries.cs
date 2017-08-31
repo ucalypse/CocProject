@@ -81,7 +81,7 @@ namespace ClashOfClans.Data
         public WarPlanModel GetWarPlan()
         {
             MemberContext db = new MemberContext();
-            return db.WarPlans.First();
+            return db.WarPlans.OrderByDescending(x => x.Id).First();
         }
        
     }

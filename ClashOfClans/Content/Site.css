@@ -101,7 +101,7 @@ h1,h2, h3 {
     font-family: serif;
     color: Red;
 }
-#displayWarPlan {
+#renderPlan {
     height: 700px;
     background-image: url("Images/parchment.jpg");
     background-size: cover;
