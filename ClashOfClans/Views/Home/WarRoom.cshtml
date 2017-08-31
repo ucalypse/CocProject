@@ -8,14 +8,14 @@
 <h2>War Room</h2>
 <body>
     <div class="jumbotron">
-        @*@if (Model.CurrentWar.State == "inWar")
+        @if (Model.CurrentWar.State == "inWar")
         {
             <h2 id="warMessage">Time Until War Ends</h2>
         }
         else
         {
             <h2>Time Until War Begins</h2>
-        }*@
+        }
 
         <div id="renderTime"></div>
     </div>
@@ -70,8 +70,10 @@
         });
 
         $("#submitButton").click(function () {
-            $.post( "/Home/SendWarPlan", { memberName : $("#memberName").value, warPlan : $("#warPlan").value })
+            var war = $("#warPlan").val();
+            $.post( "/Home/SendWarPlan", { memberName : $("#memberName").value, warPlan : war })
                 .done(function (data) {
+                    $("#displayWarPlan").html("<p>" + war + "</p>");
                     $("#popupContact").css("display: none");
                 });
         });

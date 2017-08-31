@@ -76,7 +76,12 @@ namespace ClashOfClans.Data
                 db.WarPlans.Add(new WarPlanModel {MemberName = memberName, Plan = warPlan});
                 db.SaveChanges();
             }
+        }
 
+        public WarPlanModel GetWarPlan()
+        {
+            MemberContext db = new MemberContext();
+            return db.WarPlans.First();
         }
        
     }
