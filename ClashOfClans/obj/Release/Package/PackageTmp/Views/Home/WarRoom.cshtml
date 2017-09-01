@@ -1,0 +1,132 @@
+﻿@using System.Web.UI.WebControls
+@model ClashOfClans.Models.WarViewModel
+@{
+    ViewBag.Title = "War Room";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>War Room</h1>
+<body>
+    <div class="jumbotron">
+        @if (Model.CurrentWar.State == "inWar")
+        {
+            <h2 id="warMessage">Time Until War Ends</h2>
+        }
+        else
+        {
+            <h2>Time Until War Begins</h2>
+        }
+
+        <div id="renderTime"></div>
+    </div>
+<div id="popupContact" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeButton">&times;</span>
+        <div class="form-group">
+            <input type="text" id="memberName" name="memberName" class="form-control" placeholder="Member Name"/>
+            <textarea id="warPlan" style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
+            <button class="btn-primary" id="submitButton">Submit</button>
+        </div>
+        
+    </div>
+</div>
+    <h1 align="center">The War Plan...</h1>
+<button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button><br/>
+<div id="renderPlan" class="col-md-6">
+    <p id="displayMemberName">@Model.WarPlan.MemberName</p>
+    <p id="displayWarPlan">@Model.WarPlan.Plan</p>
+</div>
+@*<div class="col-md-6" id="opponentTable">
+    <table class="table table-inverse">
+        <thead>
+        <tr><th>Name</th><th>Townhall Level</th><th>Position</th></tr>
+        <br /><br />
+        </thead>
+        @foreach (var member in Model.CurrentWar.OpposingClan.MembersInWars.OrderBy(m => m.MapPosition))
+        {
+            <tr>
+                <td>@member.Name</td>
+                <td>@member.TownHallLevel</td>
+                <td>@member.MapPosition</td>
+            </tr>
+        }
+    </table>
+</div>*@
+@*<div class="col-md-6" id="warMap">
+    <img src="~/Content/Images/TownHalls/th11.png"/>@Model.CurrentWar.OpposingClan.MembersInWars.First().Name
+    <img src="~/Content/Images/TownHalls/th10.png"/>
+    <img src="~/Content/Images/TownHalls/th9.png"/>
+    <img src="~/Content/Images/TownHalls/th8.png"/>
+    <img src="~/Content/Images/TownHalls/th7.png"/>
+    <img src="~/Content/Images/TownHalls/th6.png"/>
+    <img src="~/Content/Images/TownHalls/th5.png"/>
+</div>*@
+<div class="col-md-6" id="warMap">
+    @for (int i = 0; i < Model.CurrentWar.OpposingClan.MembersInWars.Count; i++)
+    {
+        <div style="line-height: 100px">
+
+        @if (i % 2 == 0)
+        {
+                <img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right"/>
+                <p style="text-align: right">@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
+        }
+        else
+        {
+                <img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: left"/>
+                <p>@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
+        }
+        </div>
+
+    }
+</div>
+</body>
+<script>
+    $(function() {
+        $.getJSON('/Home/ConvertedDateTime')
+            .done(function(response) {
+                var countDownDate = new Date(response).getTime();
+                var x = setInterval(function() {
+
+                        var now = new Date(); 
+                        var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+
+                        var distance = countDownDate - nowUtc;
+
+                        var seconds = Math.floor((distance / 1000) % 60);
+                        var minutes = Math.floor((distance / 1000 / 60) % 60);
+                        var hours = Math.floor((distance / (1000 * 60 * 60)));
+
+                        $("#renderTime").html(
+                            (hours) + "h " + minutes + "m " + seconds + "s ");
+
+                        if (distance < 0) {
+                            clearInterval(x);
+                            $("#renderTime").html("War Over");
+                        }
+                },
+                1000);
+            });
+        $("#button").click(function() {
+            $("#popupContact").css("display", "block");
+        });
+
+        $("#closeButton").click(function () {
+            $("#popupContact").css("display", "none");
+        });
+
+        $("#submitButton").click(function () {
+            var war = $("#warPlan").val();
+            var member = $("#memberName").val();
+            $.post( "/Home/SendWarPlan", { memberName : member, warPlan : war })
+                .done(function (data) {
+                    $("#displayMemberName").html(member + "<br />");
+                    $("#displayWarPlan").html(war);
+                    $("#popupContact").css("display", "none");
+                });
+        });
+    });
+   
+   
+</script>
+

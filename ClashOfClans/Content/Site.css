@@ -106,7 +106,7 @@ h1 {
     color: Red;
 }
 #renderPlan {
-    height: 675px;
+    height: 560px;
     background-image: url("Images/parchment.jpg");
     background-size: contain;
 }
@@ -144,7 +144,7 @@ h1 {
 }
 #warMap {
     background-image: url("Images/warMap.png");
-    height: 1000px;
+    height: 915px;
 }
 #warMap img {
     height: 100px;

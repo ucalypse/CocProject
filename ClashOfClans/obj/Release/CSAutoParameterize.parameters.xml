@@ -3,4 +3,10 @@
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-ClashOfClans-20170515052535.mdf;Initial Catalog=aspnet-ClashOfClans-20170515052535;Integrated Security=True" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\projects\\CocProject\\ClashOfClans\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
+  <parameter name="ClashOfClans.Data.MemberContext-Web.config Connection String" description="ClashOfClans.Data.MemberContext Connection String used in web.config by the application to access the database." defaultValue="ClashOfClans.Data.MemberContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\CocProject\\ClashOfClans\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ClashOfClans.Data.MemberContext']/@connectionString" />
+  </parameter>
+  <parameter name="ClashOfClans.Data.MemberContext_DatabasePublish-Web.config Connection String" description="ClashOfClans.Data.MemberContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="ClashOfClans.Data.MemberContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\projects\\CocProject\\ClashOfClans\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ClashOfClans.Data.MemberContext_DatabasePublish']/@connectionString" />
+  </parameter>
 </parameters>

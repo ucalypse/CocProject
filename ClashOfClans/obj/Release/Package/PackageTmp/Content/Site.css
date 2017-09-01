@@ -64,6 +64,10 @@ textarea {
 #memberTable {
     float: right;   
 }
+#opponentTable {
+    float: right;
+    overflow: auto;
+}
 
 footer {
     text-align: center;
@@ -89,4 +93,72 @@ label {
     padding: 20px;
     font-family: fantasy;
     font-size: 24px;
+}
+table {
+    background-color: lightgray;
+}
+#warMessage {
+    font-family: fantasy;
+    color: red;
+}
+h1 {
+    font-family: Cardiff;
+    color: Red;
+}
+#renderPlan {
+    height: 560px;
+    background-image: url("Images/parchment.jpg");
+    background-size: contain;
+}
+#renderPlan p {
+    font-size: 26px;
+    padding: 20px;
+    word-wrap: break-word;
+    font-family: AleAndWenches;
+}
+.modal {
+    display: none;
+    background-color: rgba(0,0,0,0.4);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: darkgrey;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+}
+#warMap {
+    background-image: url("Images/warMap.png");
+    height: 915px;
+}
+#warMap img {
+    height: 100px;
+    width: 100px;
+}
+@font-face {
+    font-family: Cardiff;
+    src: url(../fonts/Cardiff.ttf);
+}
+@font-face {
+    font-family: OldEnglish;
+    src: url(../fonts/old_english_hearts.ttf);
+}
+@font-face {
+    font-family: AleAndWenches;
+    src: url(../fonts/ALEAWB__.ttf);
 }
