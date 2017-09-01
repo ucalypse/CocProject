@@ -34,7 +34,9 @@ namespace ClashOfClans.Controllers
         {
             ViewBag.Message = " War Room";
             var warPlan = queries.GetWarPlan();
-            return View(new WarViewModel{CurrentWar = apiCall.GetCurrentWar("#8UJGPROJ"), WarPlan = warPlan});
+            var currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
+            currentWar.OpposingClan.MembersInWars = currentWar.OpposingClan.MembersInWars.OrderBy(m => m.MapPosition).ToList();
+            return View(new WarViewModel{CurrentWar = currentWar, WarPlan = warPlan});
         }
 
         [HttpGet]
@@ -48,15 +50,14 @@ namespace ClashOfClans.Controllers
         {
             war.CurrentWar = apiCall.GetCurrentWar("#8UJGPROJ");
             var convertedTime = war.CurrentWar.EndTime;
+            
             if (war.CurrentWar.State == "preparation")
             {
-                convertedTime = war.CurrentWar.EndTime.AddHours(-24);
+                convertedTime = convertedTime.AddHours(-24);
             }
-           
-            //  var rawString =  war.EndTime.ToString();
-            var rawString =  convertedTime.ToString();
-             
-            return Json(rawString.Substring(0, 17), JsonRequestBehavior.AllowGet);
+            var rawString =  convertedTime.ToString("MM/dd/yyyy HH:mm:ss");
+
+            return Json(rawString, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

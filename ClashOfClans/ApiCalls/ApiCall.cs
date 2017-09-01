@@ -47,7 +47,7 @@ namespace ClashOfClans.ApiCalls
             var request = new RestRequest("clans/{clanTag}/currentwar", Method.GET);
             request.DateFormat = "yyyyMMddTHHmmss.FFFK";
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("Authorization", workToken);
+            request.AddHeader("Authorization", token);
             request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
             var response = client.Execute<CurrentWar>(request);
 

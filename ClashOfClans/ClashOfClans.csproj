@@ -277,6 +277,14 @@
     <Content Include="Content\Images\th5.jpg" />
     <Content Include="Content\Images\th6.jpg" />
     <Content Include="Content\Images\th7.jpg" />
+    <Content Include="Content\Images\TownHalls\th11.png" />
+    <Content Include="Content\Images\TownHalls\th4.png" />
+    <Content Include="Content\Images\TownHalls\th5.png" />
+    <Content Include="Content\Images\TownHalls\th6.png" />
+    <Content Include="Content\Images\TownHalls\th7.png" />
+    <Content Include="Content\Images\TownHalls\th10.png" />
+    <Content Include="Content\Images\TownHalls\th8.png" />
+    <Content Include="Content\Images\TownHalls\th9.png" />
     <Content Include="Content\Images\warMap.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
