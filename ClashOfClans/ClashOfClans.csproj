@@ -277,6 +277,7 @@
     <Content Include="Content\Images\th5.jpg" />
     <Content Include="Content\Images\th6.jpg" />
     <Content Include="Content\Images\th7.jpg" />
+    <Content Include="Content\Images\warMap.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,6 +290,10 @@
     <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
     <Content Include="fonts\October Twilight - OTF.otf" />
     <Content Include="fonts\October Twilight - TTF.ttf" />
+    <Content Include="fonts\Cardiff.ttf" />
+    <Content Include="fonts\old_english_hearts.ttf" />
+    <Content Include="fonts\ALEAWB__.TTF" />
+    <Content Include="fonts\ALEAWBB_.TTF" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

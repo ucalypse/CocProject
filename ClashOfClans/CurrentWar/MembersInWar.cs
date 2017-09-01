@@ -7,7 +7,7 @@ namespace ClashOfClans
         [DeserializeAs(Name = "name")]
         public string Name { get; set; }
 
-        [DeserializeAs(Name = "townHallLevel")]
+        [DeserializeAs(Name = "townhallLevel")]
         public int TownHallLevel { get; set; }
 
         [DeserializeAs(Name = "mapPosition")]

@@ -64,6 +64,10 @@ textarea {
 #memberTable {
     float: right;   
 }
+#opponentTable {
+    float: right;
+    overflow: auto;
+}
 
 footer {
     text-align: center;
@@ -97,19 +101,20 @@ table {
     font-family: fantasy;
     color: red;
 }
-h1,h2, h3 {
-    font-family: serif;
+h1 {
+    font-family: Cardiff;
     color: Red;
 }
 #renderPlan {
-    height: 750px;
+    height: 675px;
     background-image: url("Images/parchment.jpg");
-    background-size: cover;
+    background-size: contain;
 }
 #renderPlan p {
-    font-size: 16px;
+    font-size: 26px;
     padding: 20px;
-    word-wrap: normal;
+    word-wrap: break-word;
+    font-family: AleAndWenches;
 }
 .modal {
     display: none;
@@ -136,4 +141,16 @@ h1,h2, h3 {
         color: white;
         text-decoration: none;
         cursor: pointer;
+}
+@font-face {
+    font-family: Cardiff;
+    src: url(../fonts/Cardiff.ttf);
+}
+@font-face {
+    font-family: OldEnglish;
+    src: url(../fonts/old_english_hearts.ttf);
+}
+@font-face {
+    font-family: AleAndWenches;
+    src: url(../fonts/ALEAWB__.ttf);
 }

@@ -42,10 +42,12 @@ namespace ClashOfClans.ApiCalls
 
         public CurrentWar GetCurrentWar(string clanTag)
         {
+            var workToken =
+                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjQ0MTJjM2E3LTI5Y2ItNDU5Zi05NjJmLTg4NzAxZDNlNWM0NSIsImlhdCI6MTUwNDI3MTUxNSwic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE1Mi4xNzkuNy4yMDYiXSwidHlwZSI6ImNsaWVudCJ9XX0.mcY3DhPsJ3b05gNZdTBBBY2AMR5kLXC_pSZdWtSVjmewcQcKYim-gsIqhBRg5sflBfXclgU1sQLXk3pKm6MXvQ";
             var request = new RestRequest("clans/{clanTag}/currentwar", Method.GET);
             request.DateFormat = "yyyyMMddTHHmmss.FFFK";
             request.AddHeader("Accept", "application/json");
-            request.AddHeader("Authorization", token);
+            request.AddHeader("Authorization", workToken);
             request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
             var response = client.Execute<CurrentWar>(request);
 

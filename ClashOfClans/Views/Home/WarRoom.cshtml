@@ -5,36 +5,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>War Room</h2>
+<h1>War Room</h1>
 <body>
     <div class="jumbotron">
-        @if (Model.CurrentWar.State == "inWar")
+        @*@if (Model.CurrentWar.State == "inWar")
         {
             <h2 id="warMessage">Time Until War Ends</h2>
         }
         else
         {
             <h2>Time Until War Begins</h2>
-        }
+        }*@
 
         <div id="renderTime"></div>
     </div>
 <div id="popupContact" class="modal">
     <div class="modal-content">
         <span class="close" id="closeButton">&times;</span>
-       <div class="form-group">
-                <input type="text" id="memberName" name="memberName" class="form-control" placeholder="Member Name"/>
-                <textarea id="warPlan" style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
-                <button class="btn-primary" id="submitButton">Submit</button>
-            </div>
+        <div class="form-group">
+            <input type="text" id="memberName" name="memberName" class="form-control" placeholder="Member Name"/>
+            <textarea id="warPlan" style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
+            <button class="btn-primary" id="submitButton">Submit</button>
+        </div>
         
     </div>
 </div>
-<div id="renderPlan" class="col-md-8">
-    <h3>The War Plan...</h3>
-    <button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button><br/>
+    <h1 align="center">The War Plan...</h1>
+<button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button><br/>
+<div id="renderPlan" class="col-md-6">
     <p id="displayMemberName">@Model.WarPlan.MemberName</p>
     <p id="displayWarPlan">@Model.WarPlan.Plan</p>
+</div>
+<div class="col-md-6" id="opponentTable">
+    <table class="table table-inverse">
+        <thead>
+        <tr><th>Name</th><th>Townhall Level</th><th>Position</th></tr>
+        <br /><br />
+        </thead>
+        @foreach (var member in Model.CurrentWar.OpposingClan.MembersInWars.OrderBy(m => m.MapPosition))
+        {
+            <tr>
+                <td>@member.Name</td>
+                <td>@member.TownHallLevel</td>
+                <td>@member.MapPosition</td>
+            </tr>
+        }
+    </table>
 </div>
 </body>
 <script>
