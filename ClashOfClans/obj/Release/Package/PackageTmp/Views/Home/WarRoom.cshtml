@@ -7,18 +7,20 @@
 
 <h1>War Room</h1>
 <body>
-    <div class="jumbotron">
-        @if (Model.CurrentWar.State == "inWar")
-        {
-            <h2 id="warMessage">Time Until War Ends</h2>
-        }
-        else
-        {
-            <h2>Time Until War Begins</h2>
-        }
+<div class="jumbotron">
+    <div style="float: left"><h1>In Yo Face</h1></div><div align="right"><h1>@Model.CurrentWar.OpposingClan.Name</h1></div>
+    <div style="float: left"><p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OurClan.Stars</p></div><div align="right"><p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OpposingClan.Stars</p></div>
+    @if (Model.CurrentWar.State == "inWar")
+    {
+        <h2 class="warMessage" align="center">Time Until War Ends</h2>
+    }
+    else
+    {
+        <h2 align="center">Time Until War Begins</h2>
+    }
 
-        <div id="renderTime"></div>
-    </div>
+    <div class="warMessage" id="renderTime" align="center"></div>
+</div>
 <div id="popupContact" class="modal">
     <div class="modal-content">
         <span class="close" id="closeButton">&times;</span>
@@ -36,35 +38,11 @@
     <p id="displayMemberName">@Model.WarPlan.MemberName</p>
     <p id="displayWarPlan">@Model.WarPlan.Plan</p>
 </div>
-@*<div class="col-md-6" id="opponentTable">
-    <table class="table table-inverse">
-        <thead>
-        <tr><th>Name</th><th>Townhall Level</th><th>Position</th></tr>
-        <br /><br />
-        </thead>
-        @foreach (var member in Model.CurrentWar.OpposingClan.MembersInWars.OrderBy(m => m.MapPosition))
-        {
-            <tr>
-                <td>@member.Name</td>
-                <td>@member.TownHallLevel</td>
-                <td>@member.MapPosition</td>
-            </tr>
-        }
-    </table>
-</div>*@
-@*<div class="col-md-6" id="warMap">
-    <img src="~/Content/Images/TownHalls/th11.png"/>@Model.CurrentWar.OpposingClan.MembersInWars.First().Name
-    <img src="~/Content/Images/TownHalls/th10.png"/>
-    <img src="~/Content/Images/TownHalls/th9.png"/>
-    <img src="~/Content/Images/TownHalls/th8.png"/>
-    <img src="~/Content/Images/TownHalls/th7.png"/>
-    <img src="~/Content/Images/TownHalls/th6.png"/>
-    <img src="~/Content/Images/TownHalls/th5.png"/>
-</div>*@
-<div class="col-md-6" id="warMap">
+
+<div class="col-md-6" style ="display:table" id="warMap">
     @for (int i = 0; i < Model.CurrentWar.OpposingClan.MembersInWars.Count; i++)
     {
-        <div style="line-height: 100px">
+        <div class="content" style="line-height: 100px">
 
         @if (i % 2 == 0)
         {
@@ -99,10 +77,12 @@
 
                         $("#renderTime").html(
                             (hours) + "h " + minutes + "m " + seconds + "s ");
-
+                        if (minutes < 30) {
+                            $("#renderTime").css("color", "red");
+                        }
                         if (distance < 0) {
                             clearInterval(x);
-                            $("#renderTime").html("War Over");
+                            $("#renderTime").html("Final Score");
                         }
                 },
                 1000);

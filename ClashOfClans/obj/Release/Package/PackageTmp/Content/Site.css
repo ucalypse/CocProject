@@ -1,5 +1,8 @@
 ﻿body {
-    
+    background-image: url("Images/ClashBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: antiquewhite;
@@ -7,10 +10,6 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    background-image: url("Images/ClashBackground.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -97,16 +96,16 @@ label {
 table {
     background-color: lightgray;
 }
-#warMessage {
-    font-family: fantasy;
-    color: red;
+.warMessage {
+    font-family: NoneShallPass;
+    font-size: 30px;
 }
 h1 {
     font-family: Cardiff;
     color: Red;
 }
 #renderPlan {
-    height: 560px;
+    height: 1120px;
     background-image: url("Images/parchment.jpg");
     background-size: contain;
 }
@@ -143,13 +142,14 @@ h1 {
         cursor: pointer;
 }
 #warMap {
-    background-image: url("Images/warMap.png");
+    background-image: url("Images/warMap.jpg");
     height: 915px;
 }
 #warMap img {
     height: 100px;
     width: 100px;
 }
+
 @font-face {
     font-family: Cardiff;
     src: url(../fonts/Cardiff.ttf);
@@ -161,4 +161,8 @@ h1 {
 @font-face {
     font-family: AleAndWenches;
     src: url(../fonts/ALEAWB__.ttf);
+}
+@font-face {
+    font-family: NoneShallPass;
+    src: url(../fonts/NoneShallPassDEMO-KCFonts.ttf);
 }
