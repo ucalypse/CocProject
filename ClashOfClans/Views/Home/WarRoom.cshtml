@@ -36,35 +36,11 @@
     <p id="displayMemberName">@Model.WarPlan.MemberName</p>
     <p id="displayWarPlan">@Model.WarPlan.Plan</p>
 </div>
-@*<div class="col-md-6" id="opponentTable">
-    <table class="table table-inverse">
-        <thead>
-        <tr><th>Name</th><th>Townhall Level</th><th>Position</th></tr>
-        <br /><br />
-        </thead>
-        @foreach (var member in Model.CurrentWar.OpposingClan.MembersInWars.OrderBy(m => m.MapPosition))
-        {
-            <tr>
-                <td>@member.Name</td>
-                <td>@member.TownHallLevel</td>
-                <td>@member.MapPosition</td>
-            </tr>
-        }
-    </table>
-</div>*@
-@*<div class="col-md-6" id="warMap">
-    <img src="~/Content/Images/TownHalls/th11.png"/>@Model.CurrentWar.OpposingClan.MembersInWars.First().Name
-    <img src="~/Content/Images/TownHalls/th10.png"/>
-    <img src="~/Content/Images/TownHalls/th9.png"/>
-    <img src="~/Content/Images/TownHalls/th8.png"/>
-    <img src="~/Content/Images/TownHalls/th7.png"/>
-    <img src="~/Content/Images/TownHalls/th6.png"/>
-    <img src="~/Content/Images/TownHalls/th5.png"/>
-</div>*@
-<div class="col-md-6" id="warMap">
+
+<div class="col-md-6" style ="display:table" id="warMap">
     @for (int i = 0; i < Model.CurrentWar.OpposingClan.MembersInWars.Count; i++)
     {
-        <div style="line-height: 100px">
+        <div class="content" style="line-height: 100px">
 
         @if (i % 2 == 0)
         {
