@@ -96,9 +96,9 @@ label {
 table {
     background-color: lightgray;
 }
-#warMessage {
-    font-family: fantasy;
-    color: red;
+.warMessage {
+    font-family: NoneShallPass;
+    font-size: 30px;
 }
 h1 {
     font-family: Cardiff;
@@ -161,4 +161,8 @@ h1 {
 @font-face {
     font-family: AleAndWenches;
     src: url(../fonts/ALEAWB__.ttf);
+}
+@font-face {
+    font-family: NoneShallPass;
+    src: url(../fonts/NoneShallPassDEMO-KCFonts.ttf);
 }

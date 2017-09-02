@@ -302,6 +302,7 @@
     <Content Include="fonts\old_english_hearts.ttf" />
     <Content Include="fonts\ALEAWB__.TTF" />
     <Content Include="fonts\ALEAWBB_.TTF" />
+    <Content Include="fonts\NoneShallPassDEMO-KCFonts.ttf" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

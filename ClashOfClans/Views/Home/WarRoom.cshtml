@@ -7,18 +7,20 @@
 
 <h1>War Room</h1>
 <body>
-    <div class="jumbotron">
-        @if (Model.CurrentWar.State == "inWar")
-        {
-            <h2 id="warMessage">Time Until War Ends</h2>
-        }
-        else
-        {
-            <h2>Time Until War Begins</h2>
-        }
+<div class="jumbotron">
+    <div style="float: left"><h1>In Yo Face</h1></div><div align="right"><h1>@Model.CurrentWar.OpposingClan.Name</h1></div>
+    <div style="float: left"><p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OurClan.Stars</p></div><div align="right"><p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OpposingClan.Stars</p></div>
+    @if (Model.CurrentWar.State == "inWar")
+    {
+        <h2 class="warMessage" align="center">Time Until War Ends</h2>
+    }
+    else
+    {
+        <h2 align="center">Time Until War Begins</h2>
+    }
 
-        <div id="renderTime"></div>
-    </div>
+    <div class="warMessage" id="renderTime" align="center"></div>
+</div>
 <div id="popupContact" class="modal">
     <div class="modal-content">
         <span class="close" id="closeButton">&times;</span>
@@ -75,10 +77,12 @@
 
                         $("#renderTime").html(
                             (hours) + "h " + minutes + "m " + seconds + "s ");
-
+                        if (minutes < 30) {
+                            $("#renderTime").css("color", "red");
+                        }
                         if (distance < 0) {
                             clearInterval(x);
-                            $("#renderTime").html("War Over");
+                            $("#renderTime").html("Final Score");
                         }
                 },
                 1000);

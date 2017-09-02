@@ -5,6 +5,9 @@ namespace ClashOfClans
 {
     public class Clan
     {
+        [DeserializeAs(Name = "name")]
+        public string Name { get; set; }
+
         [DeserializeAs(Name = "members")]
         public List<MembersInWar> MembersInWars { get; set; }
 
