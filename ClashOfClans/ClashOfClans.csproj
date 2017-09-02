@@ -358,6 +358,7 @@
     <Content Include="Views\TownHall\TownHall10.cshtml" />
     <Content Include="Views\Home\Tutorials.cshtml" />
     <Content Include="Views\Home\WarRoom.cshtml" />
+    <Content Include="Views\Home\NoWar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708141606146_initialMigration.resx">

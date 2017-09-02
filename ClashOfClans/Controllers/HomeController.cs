@@ -35,8 +35,14 @@ namespace ClashOfClans.Controllers
             ViewBag.Message = " War Room";
             var warPlan = queries.GetWarPlan();
             var currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
-            currentWar.OpposingClan.MembersInWars = currentWar.OpposingClan.MembersInWars.OrderBy(m => m.MapPosition).ToList();
-            return View(new WarViewModel{CurrentWar = currentWar, WarPlan = warPlan});
+            if (currentWar.State == "preparation" | currentWar.State == "inWar")
+            {
+                currentWar.OpposingClan.MembersInWars = currentWar.OpposingClan.MembersInWars
+                    .OrderBy(m => m.MapPosition).ToList();
+
+                return View(new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan});
+            }
+            else return View("Home", "NoWar");
         }
 
         [HttpGet]
