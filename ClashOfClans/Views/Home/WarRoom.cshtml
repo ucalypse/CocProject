@@ -5,11 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>War Room</h1>
+
 <body>
 <div class="jumbotron">
-    <div style="float: left"><h1>In Yo Face</h1></div><div align="right"><h1>@Model.CurrentWar.OpposingClan.Name</h1></div>
-    <div style="float: left"><p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OurClan.Stars</p></div><div align="right"><p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OpposingClan.Stars</p></div>
+    <div style="float: left">
+        <h1>In Yo Face</h1>
+    </div>
+    <div align="right">
+        <h1>@Model.CurrentWar.OpposingClan.Name</h1>
+    </div>
+    <div style="float: left">
+        <p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OurClan.Stars</p>
+    </div>
+    <div align="right">
+        <p class="warMessage" style="font-size: 50px;">@Model.CurrentWar.OpposingClan.Stars</p>
+    </div>
     @if (Model.CurrentWar.State == "inWar")
     {
         <h2 class="warMessage" align="center">Time Until War Ends</h2>
@@ -29,93 +39,35 @@
             <textarea id="warPlan" style="height: 300px;" class="form-control" name="warPlan" placeholder="Enter War Plan"></textarea>
             <button class="btn-primary" id="submitButton">Submit</button>
         </div>
-        
+
     </div>
 </div>
-    <h1 align="center">The War Plan...</h1>
+<h1 align="center" style="font-size: 40px">The War Plan...</h1>
 <button class="btn-group-sm" id="button">Add War Plan (Admin Only)</button><br/>
 <div id="renderPlan" class="col-md-6">
     <p id="displayMemberName">@Model.WarPlan.MemberName</p>
     <p id="displayWarPlan">@Model.WarPlan.Plan</p>
 </div>
 
-<div class="col-md-6" style ="display:table" id="warMap">
+<div class="col-md-6" style="display: table" id="warMap">
     @for (int i = 0; i < Model.CurrentWar.OpposingClan.MembersInWars.Count; i++)
     {
         <div class="content" style="line-height: 100px">
 
-        @if (i % 2 == 0)
-        {
+            @if (i % 2 == 0)
+            {
                 <img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right"/>
                 <p style="text-align: right">@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
-        }
-        else
-        {
+            }
+            else
+            {
                 <img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: left"/>
                 <p>@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
-        }
+            }
         </div>
 
     }
 </div>
 </body>
-<script>
-    $(function() {
-        $.getJSON('/Home/ConvertedDateTime')
-            .done(function(response) {
-                var countDownDate = new Date(response).getTime();
-                var x = setInterval(function() {
-
-                        var now = new Date(); 
-                        var nowUtc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-
-                        var distance = countDownDate - nowUtc;
-
-                        var seconds = Math.floor((distance / 1000) % 60);
-                        var minutes = Math.floor((distance / 1000 / 60) % 60);
-                        var hours = Math.floor((distance / (1000 * 60 * 60)));
-
-                        $("#renderTime").html(
-                            (hours) + "h " + minutes + "m " + seconds + "s ");
-                        if (minutes < 30) {
-                            $("#renderTime").css("color", "red");
-                        }
-                        if (distance < 0) {
-                            clearInterval(x);
-                            $("#renderTime").html("Final Score");
-                        }
-                },
-                1000);
-            });
-        $("#button").click(function () {
-                var name = prompt("Enter username");
-                var password = prompt("Enter Admin Password");
-            $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
-                .done(function(data) {
-                    if (data) {
-                        $("#popupContact").css("display", "block");
-                    } else {
-                        alert("Authentication failed");
-                    }
-                });
-        });
-
-        $("#closeButton").click(function () {
-            $("#popupContact").css("display", "none");
-        });
-
-        $("#submitButton").click(function () {
-                var war = $("#warPlan").val();
-                var member = $("#memberName").val();
-                $.post("/Home/SendWarPlan", { memberName: member, warPlan: war })
-                    .done(function(data) {
-                        $("#displayMemberName").html(member + "<br />");
-                        $("#displayWarPlan").html(war);
-                        $("#popupContact").css("display", "none");
-                    });
-        });
-    });
-   
-   
-</script>
+<script src="~/Scripts/CurrentWar/WarRoom.js"></script>
 

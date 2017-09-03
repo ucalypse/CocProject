@@ -286,6 +286,7 @@
     <Content Include="Content\Images\TownHalls\th8.png" />
     <Content Include="Content\Images\TownHalls\th9.png" />
     <Content Include="Content\Images\warMap.jpg" />
+    <Content Include="Content\Images\warRoom.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -305,6 +306,7 @@
     <Content Include="fonts\NoneShallPassDEMO-KCFonts.ttf" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\CurrentWar\WarRoom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
