@@ -72,5 +72,12 @@ namespace ClashOfClans.Controllers
            queries.PopulateWarPlan(memberName, warPlan);
             return Json(new WarViewModel{WarPlan = new WarPlanModel{MemberName = memberName, Plan = warPlan}}, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult GetAuthentication(string adminName, string adminPassword)
+        {
+            AdminModel admin = new AdminModel{Password = adminPassword, UserName = adminName};
+            return Json(queries.Authenticated(admin), JsonRequestBehavior.AllowGet);
+        }
     }
 }

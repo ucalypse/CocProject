@@ -56,18 +56,18 @@ namespace ClashOfClans.Data
                 db.SaveChanges();
             }
         }
-        public bool Authenticated(string userName, string password)
+        public bool Authenticated(AdminModel admin)
         {
             MemberContext db = new MemberContext();
-            if (!db.Admins.Where(n => n.UserName == userName).Single().Equals(null) &&
-                !db.Admins.Where(n => n.Password == password).Single().Equals(null))
+            var admins = db.Admins.ToList();
+            var match = admins.Where(n => n.UserName == admin.UserName && n.Password == admin.Password).SingleOrDefault();
+            if (match != null)
             {
                 return true;
             }
-           
             return false;
         }
-
+         
         public void PopulateWarPlan(string memberName, string warPlan)
         {
             MemberContext db = new MemberContext();

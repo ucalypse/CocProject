@@ -87,8 +87,17 @@
                 },
                 1000);
             });
-        $("#button").click(function() {
-            $("#popupContact").css("display", "block");
+        $("#button").click(function () {
+                var name = prompt("Enter username");
+                var password = prompt("Enter Admin Password");
+            $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
+                .done(function(data) {
+                    if (data) {
+                        $("#popupContact").css("display", "block");
+                    } else {
+                        alert("Authentication failed");
+                    }
+                });
         });
 
         $("#closeButton").click(function () {
@@ -96,14 +105,14 @@
         });
 
         $("#submitButton").click(function () {
-            var war = $("#warPlan").val();
-            var member = $("#memberName").val();
-            $.post( "/Home/SendWarPlan", { memberName : member, warPlan : war })
-                .done(function (data) {
-                    $("#displayMemberName").html(member + "<br />");
-                    $("#displayWarPlan").html(war);
-                    $("#popupContact").css("display", "none");
-                });
+                var war = $("#warPlan").val();
+                var member = $("#memberName").val();
+                $.post("/Home/SendWarPlan", { memberName: member, warPlan: war })
+                    .done(function(data) {
+                        $("#displayMemberName").html(member + "<br />");
+                        $("#displayWarPlan").html(war);
+                        $("#popupContact").css("display", "none");
+                    });
         });
     });
    
