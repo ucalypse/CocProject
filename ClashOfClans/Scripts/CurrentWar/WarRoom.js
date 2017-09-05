@@ -52,4 +52,8 @@
                 $("#popupContact").css("display", "none");
             });
     });
+    $(".warImages").click(function() {
+        alert(position);
+        return false;
+    });
 });
