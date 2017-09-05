@@ -56,7 +56,7 @@
 
             @if (i % 2 == 0)
             {
-                <img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right"/>
+                <a href="www.google.com" class="townHallImages" img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right" data-position=@i />
                 <p style="text-align: right">@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
             }
             else
