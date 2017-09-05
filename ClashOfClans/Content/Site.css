@@ -149,6 +149,11 @@ h1 {
     height: 100px;
     width: 100px;
 }
+#warDiv {
+    background-image: url("Images/brickWall.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 @font-face {
     font-family: Cardiff;
