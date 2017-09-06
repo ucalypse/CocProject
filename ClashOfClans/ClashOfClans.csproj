@@ -260,6 +260,10 @@
     <Compile Include="Migrations\201708311512246_addedWarPlan.Designer.cs">
       <DependentUpon>201708311512246_addedWarPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709061831052_updatingSeedMethod.cs" />
+    <Compile Include="Migrations\201709061831052_updatingSeedMethod.Designer.cs">
+      <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -270,6 +274,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ClashOfClans.Data_log.ldf" />
     <Content Include="bin\ClashOfClans.dll" />
     <Content Include="bin\ClashOfClans.pdb" />
     <Content Include="Content\bootstrap.css" />
@@ -304,7 +309,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
     <Content Include="fonts\October Twilight - OTF.otf" />
     <Content Include="fonts\October Twilight - TTF.ttf" />
     <Content Include="fonts\Cardiff.ttf" />
@@ -312,6 +316,7 @@
     <Content Include="fonts\ALEAWB__.TTF" />
     <Content Include="fonts\ALEAWBB_.TTF" />
     <Content Include="fonts\NoneShallPassDEMO-KCFonts.ttf" />
+    <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CurrentWar\WarRoom.js" />
@@ -397,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708311512246_addedWarPlan.resx">
       <DependentUpon>201708311512246_addedWarPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061831052_updatingSeedMethod.resx">
+      <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

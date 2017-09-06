@@ -183,3 +183,4 @@ C:\projects\CocProject\ClashOfClans\obj\Release\ClashOfClans.Migrations.createAd
 C:\projects\CocProject\ClashOfClans\obj\Release\ClashOfClans.Migrations.renaming.resources
 C:\projects\CocProject\ClashOfClans\obj\Release\ClashOfClans.Migrations.addedWarPlan.resources
 C:\projects\CocProject\ClashOfClans\obj\Release\ClashOfClans.csproj.GenerateResource.Cache
+C:\projects\CocProject\ClashOfClans\obj\Release\ClashOfClans.Migrations.updatingSeedMethod.resources
