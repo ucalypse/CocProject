@@ -79,5 +79,11 @@ namespace ClashOfClans.Controllers
             AdminModel admin = new AdminModel{Password = adminPassword, UserName = adminName};
             return Json(queries.Authenticated(admin), JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public void ReserveTarget(string member, int target)
+        {
+            
+        }
     }
 }

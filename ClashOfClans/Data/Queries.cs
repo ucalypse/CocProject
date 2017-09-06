@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using ClashOfClans.ApiCalls;
+using ClashOfClans.Models;
 
 namespace ClashOfClans.Data
 {
@@ -82,6 +83,16 @@ namespace ClashOfClans.Data
         {
             MemberContext db = new MemberContext();
             return db.WarPlans.OrderByDescending(x => x.Id).First();
+        }
+
+        public void ReserveTarget(string memberName, int target)
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                db.Reservations.Add(new TargetReservationModel {MemberName = memberName, Target = target});
+                db.SaveChanges();
+            }
         }
        
     }

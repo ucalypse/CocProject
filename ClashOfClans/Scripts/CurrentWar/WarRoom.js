@@ -52,8 +52,14 @@
                 $("#popupContact").css("display", "none");
             });
     });
-    $(".warImages").click(function() {
-        alert(position);
+    $(".warImages").click(function () {
+        var memberName = prompt("Enter your member name");
+        $.post("Home/ReserveTarger", { member: memberName, target: data-position })
+        .done(function data)
+        {
+            alert("wah");
+        }
+        alert(data-position);
         return false;
     });
 });
