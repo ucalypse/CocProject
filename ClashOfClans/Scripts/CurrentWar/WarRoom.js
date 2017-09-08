@@ -52,13 +52,13 @@
                 $("#popupContact").css("display", "none");
             });
     });
-    $(".warImages").click(function () {
+    $(".warImages").click(function (event) {
+        event.preventDefault();
         var memberName = prompt("Enter your member name");
-        $.post("Home/ReserveTarger", { member: memberName, target: data-position })
-        .done(function data)
-        {
-            alert("wah");
-        }
+        $.post("/Home/ReserveTarget", { member: memberName, target: data - position })
+            .done(function(data) {
+                alert("wah");
+            });
         alert(data-position);
         return false;
     });
