@@ -56,12 +56,13 @@
 
             @if (i % 2 == 0)
             {
-                <a href="http://www.google.com" data-position=@i><img class="warImages" src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right" /></a>
+
+                <a  class="warImages" href="http://www.google.com" data-position="@i"><img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right" /></a>
                 <p style="text-align: right">@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
             }
             else
             {
-                <a href="http://www.google.com" data-position=@i><img  class="warImages" src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: left" /></a>
+                <a  class="warImages" href="http://www.google.com" data-position="@i"><img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: left" /></a>
                 <p>@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
             }
         </div>

@@ -54,12 +54,14 @@
     });
     $(".warImages").click(function (event) {
         event.preventDefault();
-        var memberName = prompt("Enter your member name");
-        $.post("/Home/ReserveTarget", { member: memberName, target: data - position })
+        var mapPosition = $(this).attr("data-position");
+        //var memberName = prompt("Enter your member name");
+        alert(mapPosition);
+        $.post("/Home/ReserveTarget", { member: memberName, target: mapPosition })
             .done(function(data) {
-                alert("wah");
+                
             });
-        alert(data-position);
+        
         return false;
     });
 });
