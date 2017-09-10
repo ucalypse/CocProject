@@ -55,11 +55,12 @@
     $(".warImages").click(function (event) {
         event.preventDefault();
         var memberName = prompt("Enter your member name");
-        $.post("/Home/ReserveTarget", { member: memberName, target: data - position })
+        var temp = this.getAttribute("data-position");
+        var position = parseInt(temp) + 1;
+        $.post("/Home/ReserveTarget", { member: memberName, target: position })
             .done(function(data) {
                 alert("wah");
             });
-        alert(data-position);
         return false;
     });
 });

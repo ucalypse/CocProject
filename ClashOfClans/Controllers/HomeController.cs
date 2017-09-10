@@ -83,7 +83,7 @@ namespace ClashOfClans.Controllers
         [HttpPost]
         public void ReserveTarget(string member, int target)
         {
-            
+            queries.ReserveTarget(member, target);
         }
     }
 }
