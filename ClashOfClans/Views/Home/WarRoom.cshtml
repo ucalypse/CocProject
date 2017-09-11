@@ -57,11 +57,13 @@
             @if (i % 2 == 0)
             {
                 <a href="http://www.google.com" data-position=@i class="warImages"><img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: right" /></a>
+                <p class="reservedRight">@Model.CurrentWar.OpposingClan.MembersInWars[i].ReservedBy</p>
                 <p style="text-align: right">@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
             }
             else
             {
                 <a href="http://www.google.com" data-position=@i  class="warImages"><img src="@("/Content/Images/TownHalls/th" + Model.CurrentWar.OpposingClan.MembersInWars[i].TownHallLevel + ".png")" style="float: left" /></a>
+                <p class="reservedLeft">@Model.CurrentWar.OpposingClan.MembersInWars[i].ReservedBy</p>
                 <p>@Model.CurrentWar.OpposingClan.MembersInWars[i].Name</p>
             }
         </div>

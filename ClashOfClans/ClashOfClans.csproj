@@ -207,6 +207,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="CurrentWar\CurrentWar.cs" />
+    <Compile Include="CurrentWar\MakeReservation.cs" />
     <Compile Include="CurrentWar\MembersInWar.cs" />
     <Compile Include="CurrentWar\Clan.cs" />
     <Compile Include="Data\AdminModel.cs" />
@@ -318,6 +319,7 @@
     <Content Include="fonts\ALEAWBB_.TTF" />
     <Content Include="fonts\NoneShallPassDEMO-KCFonts.ttf" />
     <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
+    <Content Include="fonts\AnglicanText.ttf" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CurrentWar\WarRoom.js" />

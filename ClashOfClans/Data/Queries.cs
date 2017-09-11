@@ -94,6 +94,26 @@ namespace ClashOfClans.Data
                 db.SaveChanges();
             }
         }
+
+        public TargetReservationModel GetTarget(int mapPosition)
+        {
+            MemberContext db = new MemberContext();
+            var targetList = db.Reservations.ToList();
+            foreach (var target in targetList)
+            {
+                if (target != null && target.Target == mapPosition)
+                {
+                    return target;
+                }
+            }
+            return new TargetReservationModel();
+        }
+
+        public void ClearTargets()
+        {
+            MemberContext db = new MemberContext();
+            db.Database.ExecuteSqlCommand("TRUNCATE TABLE Reservations");
+        }
        
     }
 }

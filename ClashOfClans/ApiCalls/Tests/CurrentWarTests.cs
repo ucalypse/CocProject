@@ -29,7 +29,7 @@ namespace ClashOfClans.ApiCalls.Tests
         public void SetAdmin()
         {
             Queries queries = new Queries();
-            queries.CreateAdmin();
+            queries.ClearTargets();
         }
     }
 }
