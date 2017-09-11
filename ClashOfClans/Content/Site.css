@@ -87,7 +87,7 @@ p {
 .jumbo {
     background-color: red;
 }
-label {
+.clanLabel {
     background-color: gray;
     padding: 20px;
     font-family: fantasy;

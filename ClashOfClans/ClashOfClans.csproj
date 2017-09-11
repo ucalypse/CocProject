@@ -266,6 +266,14 @@
     <Compile Include="Migrations\201709061831052_updatingSeedMethod.Designer.cs">
       <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709071247452_addedKey.cs" />
+    <Compile Include="Migrations\201709071247452_addedKey.Designer.cs">
+      <DependentUpon>201709071247452_addedKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709072350113_whoa.cs" />
+    <Compile Include="Migrations\201709072350113_whoa.Designer.cs">
+      <DependentUpon>201709072350113_whoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -276,7 +284,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ClashOfClans.Data_log.ldf" />
     <Content Include="bin\ClashOfClans.dll" />
     <Content Include="bin\ClashOfClans.pdb" />
     <Content Include="Content\bootstrap.css" />
@@ -408,6 +415,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061831052_updatingSeedMethod.resx">
       <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071247452_addedKey.resx">
+      <DependentUpon>201709071247452_addedKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709072350113_whoa.resx">
+      <DependentUpon>201709072350113_whoa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

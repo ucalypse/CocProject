@@ -6,6 +6,7 @@ using ClashOfClans.Data;
 
 namespace ClashOfClans.Controllers
 {
+    [Authorize]
     public class TownHallController : Controller
     {
 

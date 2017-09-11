@@ -30,7 +30,7 @@ namespace ClashOfClans.Controllers
 
             return View();
         }
-
+        [Authorize]
         public ActionResult WarRoom()
         {
             ViewBag.Message = " War Room";

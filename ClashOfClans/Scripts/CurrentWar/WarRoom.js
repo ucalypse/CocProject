@@ -57,7 +57,7 @@
         var memberName = prompt("Enter your member name");
         var temp = this.getAttribute("data-position");
         var position = parseInt(temp) + 1;
-        if (memberName != null) {
+        if (memberName !== null) {
             $.post("/Home/ReserveTarget", { member: memberName, target: position })
                 .done(function (data) {
                     location.reload();
