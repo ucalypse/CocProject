@@ -26,16 +26,9 @@
                 1000);
         });
     $("#button").click(function () {
-        var name = prompt("Enter username");
-        var password = prompt("Enter Admin Password");
-        $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
-            .done(function (data) {
-                if (data) {
-                    $("#popupContact").css("display", "block");
-                } else {
-                    alert("Authentication failed");
-                }
-            });
+        performAdminFunction(function() {
+            $("#popupContact").css("display", "block");
+        });
     });
 
     $("#closeButton").click(function () {
@@ -66,17 +59,35 @@
         return false;
     });
     $("#clearTargets").click(function () {
+        performAdminFunction(function() {
+            $.get("/Home/ClearTargets").done(function (data) {
+                location.reload();
+            });
+        });
+
+        //var name = prompt("Enter username");
+        //var password = prompt("Enter Admin Password");
+        //$.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
+        //    .done(function (data) {
+        //        if (data) {
+        //            $.get("/Home/ClearTargets").done(function (data) {
+        //                location.reload();
+        //            });
+        //        } else {
+        //            alert("Authentication failed");
+        //        }
+        //    });
+    });
+    function performAdminFunction(onAuthenticationSuccess) {
         var name = prompt("Enter username");
         var password = prompt("Enter Admin Password");
         $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
             .done(function (data) {
                 if (data) {
-                    $.get("/Home/ClearTargets").done(function (data) {
-                        location.reload();
-                    });
+                    onAuthenticationSuccess();
                 } else {
                     alert("Authentication failed");
                 }
             });
-    });
+    }
 });
