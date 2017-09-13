@@ -86,5 +86,11 @@ namespace ClashOfClans.Controllers
         {
             queries.ReserveTarget(member, target);
         }
+
+        [HttpGet]
+        public void ClearTargets()
+        {
+            queries.ClearTargets();
+        }
     }
 }

@@ -61,7 +61,7 @@ namespace ClashOfClans.Data
         {
             MemberContext db = new MemberContext();
             var admins = db.Admins.ToList();
-            var match = admins.Where(n => n.UserName == admin.UserName && n.Password == admin.Password).SingleOrDefault();
+            var match = admins.Where(n => n.UserName == admin.UserName && n.Password == admin.Password).FirstOrDefault();
             if (match != null)
             {
                 return true;
