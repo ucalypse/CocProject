@@ -65,4 +65,18 @@
         }
         return false;
     });
+    $("#clearTargets").click(function () {
+        var name = prompt("Enter username");
+        var password = prompt("Enter Admin Password");
+        $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
+            .done(function (data) {
+                if (data) {
+                    $.get("/Home/ClearTargets").done(function (data) {
+                        location.reload();
+                    });
+                } else {
+                    alert("Authentication failed");
+                }
+            });
+    });
 });
