@@ -12,5 +12,7 @@ namespace ClashOfClans
 
         [DeserializeAs(Name = "mapPosition")]
         public int MapPosition { get; set; }
+
+        public string ReservedBy { get; set; }
     }
 }

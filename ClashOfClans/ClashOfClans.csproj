@@ -207,12 +207,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="CurrentWar\CurrentWar.cs" />
+    <Compile Include="CurrentWar\MakeReservation.cs" />
     <Compile Include="CurrentWar\MembersInWar.cs" />
     <Compile Include="CurrentWar\Clan.cs" />
     <Compile Include="Data\AdminModel.cs" />
     <Compile Include="Data\MemberContext.cs" />
     <Compile Include="Data\MemberModel.cs" />
     <Compile Include="Data\Queries.cs" />
+    <Compile Include="Data\TargetReservationModel.cs" />
     <Compile Include="Data\WarPlanModel.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -264,18 +266,28 @@
     <Compile Include="Migrations\201709061831052_updatingSeedMethod.Designer.cs">
       <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709071247452_addedKey.cs" />
+    <Compile Include="Migrations\201709071247452_addedKey.Designer.cs">
+      <DependentUpon>201709071247452_addedKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709072350113_whoa.cs" />
+    <Compile Include="Migrations\201709072350113_whoa.Designer.cs">
+      <DependentUpon>201709072350113_whoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709130039237_testing12.cs" />
+    <Compile Include="Migrations\201709130039237_testing12.Designer.cs">
+      <DependentUpon>201709130039237_testing12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\TargetReservationModel.cs" />
     <Compile Include="Models\WarViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ClashOfClans.Data_log.ldf" />
     <Content Include="bin\ClashOfClans.dll" />
     <Content Include="bin\ClashOfClans.pdb" />
     <Content Include="Content\bootstrap.css" />
@@ -318,6 +330,7 @@
     <Content Include="fonts\ALEAWBB_.TTF" />
     <Content Include="fonts\NoneShallPassDEMO-KCFonts.ttf" />
     <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
+    <Content Include="fonts\AnglicanText.ttf" />
     <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CurrentWar\WarRoom.js" />
@@ -406,6 +419,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061831052_updatingSeedMethod.resx">
       <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071247452_addedKey.resx">
+      <DependentUpon>201709071247452_addedKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709072350113_whoa.resx">
+      <DependentUpon>201709072350113_whoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130039237_testing12.resx">
+      <DependentUpon>201709130039237_testing12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

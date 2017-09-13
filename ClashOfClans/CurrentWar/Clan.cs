@@ -19,5 +19,7 @@ namespace ClashOfClans
 
         [DeserializeAs(Name = "desturctionPercentage")]
         public decimal Destruction { get; set; }
+
+      
     }
 }

@@ -87,7 +87,7 @@ p {
 .jumbo {
     background-color: red;
 }
-label {
+.clanLabel {
     background-color: gray;
     padding: 20px;
     font-family: fantasy;
@@ -154,6 +154,17 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.reservedRight {
+    font-family: Angelican;
+    float: left;
+    font-size: 80px;
+}
+
+.reservedLeft {
+    font-family: Angelican;
+    float: right;
+    font-size: 80px;
+}
 
 @font-face {
     font-family: Cardiff;
@@ -170,4 +181,8 @@ h1 {
 @font-face {
     font-family: NoneShallPass;
     src: url(../fonts/NoneShallPassDEMO-KCFonts.ttf);
+}
+@font-face {
+    font-family: Angelican;
+    src: url(../fonts/AnglicanText.ttf);
 }

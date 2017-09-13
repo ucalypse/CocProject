@@ -55,13 +55,28 @@
     $(".warImages").click(function (event) {
         event.preventDefault();
         var mapPosition = $(this).attr("data-position");
-        //var memberName = prompt("Enter your member name");
-        alert(mapPosition);
-        $.post("/Home/ReserveTarget", { member: memberName, target: mapPosition })
-            .done(function(data) {
-                
-            });
-        
+        var temp = this.getAttribute("data-position");
+        var position = parseInt(temp) + 1;
+        if (memberName !== null) {
+            $.post("/Home/ReserveTarget", { member: memberName, target: position })
+                .done(function (data) {
+                    location.reload();
+                });
+        }
         return false;
+    });
+    $("#clearTargets").click(function () {
+        var name = prompt("Enter username");
+        var password = prompt("Enter Admin Password");
+        $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
+            .done(function (data) {
+                if (data) {
+                    $.get("/Home/ClearTargets").done(function (data) {
+                        location.reload();
+                    });
+                } else {
+                    alert("Authentication failed");
+                }
+            });
     });
 });

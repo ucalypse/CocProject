@@ -13,6 +13,7 @@ namespace ClashOfClans.Controllers
         ApiCall apiCall = new ApiCall();
         Queries queries = new Queries();
         WarViewModel war = new WarViewModel();
+        MakeReservation reservation = new MakeReservation();
 
         public ActionResult Index()
         {
@@ -29,7 +30,7 @@ namespace ClashOfClans.Controllers
 
             return View();
         }
-
+        [Authorize]
         public ActionResult WarRoom()
         {
             ViewBag.Message = " War Room";
@@ -37,12 +38,12 @@ namespace ClashOfClans.Controllers
             var currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
             if (currentWar.State == "preparation" | currentWar.State == "inWar")
             {
-                currentWar.OpposingClan.MembersInWars = currentWar.OpposingClan.MembersInWars
-                    .OrderBy(m => m.MapPosition).ToList();
+                currentWar.OpposingClan.MembersInWars = reservation.AssignTargets(currentWar.OpposingClan.MembersInWars);
 
                 return View(new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan});
             }
-            else return View("Home", "NoWar");
+            queries.ClearTargets();
+            return View("NoWar");
         }
 
         [HttpGet]
@@ -83,7 +84,13 @@ namespace ClashOfClans.Controllers
         [HttpPost]
         public void ReserveTarget(string member, int target)
         {
-            
+            queries.ReserveTarget(member, target);
+        }
+
+        [HttpGet]
+        public void ClearTargets()
+        {
+            queries.ClearTargets();
         }
     }
 }

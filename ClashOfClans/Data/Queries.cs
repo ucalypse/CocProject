@@ -61,7 +61,7 @@ namespace ClashOfClans.Data
         {
             MemberContext db = new MemberContext();
             var admins = db.Admins.ToList();
-            var match = admins.Where(n => n.UserName == admin.UserName && n.Password == admin.Password).SingleOrDefault();
+            var match = admins.Where(n => n.UserName == admin.UserName && n.Password == admin.Password).FirstOrDefault();
             if (match != null)
             {
                 return true;
@@ -93,6 +93,26 @@ namespace ClashOfClans.Data
                 db.Reservations.Add(new TargetReservationModel {MemberName = memberName, Target = target});
                 db.SaveChanges();
             }
+        }
+
+        public TargetReservationModel GetTarget(int mapPosition)
+        {
+            MemberContext db = new MemberContext();
+            var targetList = db.Reservations.ToList();
+            foreach (var target in targetList)
+            {
+                if (target != null && target.Target == mapPosition)
+                {
+                    return target;
+                }
+            }
+            return new TargetReservationModel();
+        }
+
+        public void ClearTargets()
+        {
+            MemberContext db = new MemberContext();
+            db.Database.ExecuteSqlCommand("TRUNCATE TABLE Reservations");
         }
        
     }
