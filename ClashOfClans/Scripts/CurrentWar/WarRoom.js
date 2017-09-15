@@ -47,9 +47,9 @@
     });
     $(".warImages").click(function (event) {
         event.preventDefault();
-        var mapPosition = $(this).attr("data-position");
-        var temp = this.getAttribute("data-position");
-        var position = parseInt(temp) + 1;
+        var memberName = prompt("Enter username");
+        var mapPosition = this.getAttribute("data-position");
+        var position = parseInt(mapPosition) + 1;
         if (memberName !== null) {
             $.post("/Home/ReserveTarget", { member: memberName, target: position })
                 .done(function (data) {
@@ -58,26 +58,15 @@
         }
         return false;
     });
+
     $("#clearTargets").click(function () {
         performAdminFunction(function() {
             $.get("/Home/ClearTargets").done(function (data) {
                 location.reload();
             });
         });
-
-        //var name = prompt("Enter username");
-        //var password = prompt("Enter Admin Password");
-        //$.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
-        //    .done(function (data) {
-        //        if (data) {
-        //            $.get("/Home/ClearTargets").done(function (data) {
-        //                location.reload();
-        //            });
-        //        } else {
-        //            alert("Authentication failed");
-        //        }
-        //    });
     });
+
     function performAdminFunction(onAuthenticationSuccess) {
         var name = prompt("Enter username");
         var password = prompt("Enter Admin Password");
