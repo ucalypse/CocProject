@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using ClashOfClans.Data;
 using ClashOfClans.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -17,9 +18,11 @@ namespace ClashOfClans.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private Queries _queries;
 
         public AccountController()
         {
+            _queries = new Queries();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -58,7 +61,12 @@ namespace ClashOfClans.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            var view = new LoginViewModel()
+            {
+                MemberNames = _queries.GetAllMembers()
+            };
+
+            return View(view);
         }
 
         //
@@ -68,10 +76,12 @@ namespace ClashOfClans.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
+            model.MemberNames = _queries.GetAllMembers();
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true

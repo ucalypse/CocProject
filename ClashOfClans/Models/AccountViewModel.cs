@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using ClashOfClans.Data;
 
 namespace ClashOfClans.Models
 {
@@ -60,6 +61,10 @@ namespace ClashOfClans.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        [Required]
+        [Display(Name = "Which member are you?")]
+        public List<MemberModel> MemberNames { get; set; }
     }
 
     public class RegisterViewModel
