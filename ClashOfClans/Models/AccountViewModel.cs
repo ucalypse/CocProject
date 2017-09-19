@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 using ClashOfClans.Data;
 
 namespace ClashOfClans.Models
@@ -61,10 +62,6 @@ namespace ClashOfClans.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
-
-        [Required]
-        [Display(Name = "Which member are you?")]
-        public List<MemberModel> MemberNames { get; set; }
     }
 
     public class RegisterViewModel
@@ -82,8 +79,13 @@ namespace ClashOfClans.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        public SelectList MemberNameOptions { get; set; }
+
+        [Required]
+        [Display(Name = "Which member are you?")]
+        public string MemberName { get; set; }
     }
 
     public class ResetPasswordViewModel
@@ -101,7 +103,7 @@ namespace ClashOfClans.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

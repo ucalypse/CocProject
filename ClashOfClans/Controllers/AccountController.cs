@@ -63,7 +63,7 @@ namespace ClashOfClans.Controllers
             ViewBag.ReturnUrl = returnUrl;
             var view = new LoginViewModel()
             {
-                MemberNames = _queries.GetAllMembers()
+        //        MemberNameOptions = _queries.GetAllMembers()
             };
 
             return View(view);
@@ -81,7 +81,7 @@ namespace ClashOfClans.Controllers
             {
                 return View(model);
             }
-            model.MemberNames = _queries.GetAllMembers();
+          //  model.MemberNameOptions = _queries.GetAllMembers();
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -149,6 +149,9 @@ namespace ClashOfClans.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            var view = new RegisterViewModel();
+            view.MemberNameOptions = new SelectList(_queries.GetAllMembers(), "PlayerTag", "Name");
+
             return View();
         }
 
