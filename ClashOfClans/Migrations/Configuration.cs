@@ -16,8 +16,8 @@ namespace ClashOfClans.Migrations
 
         protected override void Seed(ClashOfClans.Data.MemberContext context)
         {
-            context.Admins.AddOrUpdate(new AdminModel{Password = "weedgood", UserName = "admin"});
-            context.WarPlans.AddOrUpdate(new WarPlanModel{MemberName = "Dada", Plan = "The new plan is awesome and it is great"});
+            //context.Admins.AddOrUpdate(new AdminModel{Password = "weedgood", UserName = "admin"});
+            //context.WarPlans.AddOrUpdate(new WarPlanModel{MemberName = "Dada", Plan = "The new plan is awesome and it is great"});
         }
     }
 }
