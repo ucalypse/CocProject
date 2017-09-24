@@ -274,14 +274,6 @@
     <Compile Include="Migrations\201709072350113_whoa.Designer.cs">
       <DependentUpon>201709072350113_whoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709130039237_testing12.cs" />
-    <Compile Include="Migrations\201709130039237_testing12.Designer.cs">
-      <DependentUpon>201709130039237_testing12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709182258461_mapUsers.cs" />
-    <Compile Include="Migrations\201709182258461_mapUsers.Designer.cs">
-      <DependentUpon>201709182258461_mapUsers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -429,12 +421,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709072350113_whoa.resx">
       <DependentUpon>201709072350113_whoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709130039237_testing12.resx">
-      <DependentUpon>201709130039237_testing12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709182258461_mapUsers.resx">
-      <DependentUpon>201709182258461_mapUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
