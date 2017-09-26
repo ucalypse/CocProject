@@ -125,9 +125,15 @@ namespace ClashOfClans.Data
             var member = db.Mapper.Where(m => m.Email == email).SingleOrDefault();
             if (member != null)
             {
-                return member.PlayerTag;
+                return GetMemberName(member.PlayerTag);
             }
             return "";
+        }
+
+        private static string GetMemberName(string playerTag)
+        {
+            MemberContext db = new MemberContext();
+            return db.Members.Where(m => m.PlayerTag == playerTag).Single().Name;
         }
        
     }
