@@ -211,6 +211,7 @@
     <Compile Include="CurrentWar\MembersInWar.cs" />
     <Compile Include="CurrentWar\Clan.cs" />
     <Compile Include="Data\AdminModel.cs" />
+    <Compile Include="Data\MapEmailToMemberNameModel.cs" />
     <Compile Include="Data\MemberContext.cs" />
     <Compile Include="Data\MemberModel.cs" />
     <Compile Include="Data\Queries.cs" />
@@ -273,6 +274,14 @@
     <Compile Include="Migrations\201709072350113_whoa.cs" />
     <Compile Include="Migrations\201709072350113_whoa.Designer.cs">
       <DependentUpon>201709072350113_whoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709260315408_workaround.cs" />
+    <Compile Include="Migrations\201709260315408_workaround.Designer.cs">
+      <DependentUpon>201709260315408_workaround.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709260332223_fix.cs" />
+    <Compile Include="Migrations\201709260332223_fix.Designer.cs">
+      <DependentUpon>201709260332223_fix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
@@ -421,6 +430,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709072350113_whoa.resx">
       <DependentUpon>201709072350113_whoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709260315408_workaround.resx">
+      <DependentUpon>201709260315408_workaround.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709260332223_fix.resx">
+      <DependentUpon>201709260332223_fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

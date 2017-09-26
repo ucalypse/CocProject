@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using ClashOfClans.ApiCalls;
-using ClashOfClans.Models;
 
 namespace ClashOfClans.Data
 {
@@ -113,6 +107,16 @@ namespace ClashOfClans.Data
         {
             MemberContext db = new MemberContext();
             db.Database.ExecuteSqlCommand("TRUNCATE TABLE Reservations");
+        }
+
+        public void MapEmailToMember(string email, string playerTag)
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                db.Mapper.Add(new MapEmailToMemberNameModel {Email = email, PlayerTag = playerTag});
+                db.SaveChanges();
+            }
         }
        
     }
