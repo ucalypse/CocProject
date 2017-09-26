@@ -118,6 +118,17 @@ namespace ClashOfClans.Data
                 db.SaveChanges();
             }
         }
+
+        public static string RetrieveMemberName(string email)
+        {
+            MemberContext db = new MemberContext();
+            var member = db.Mapper.Where(m => m.Email == email).SingleOrDefault();
+            if (member != null)
+            {
+                return member.PlayerTag;
+            }
+            return "";
+        }
        
     }
 }
