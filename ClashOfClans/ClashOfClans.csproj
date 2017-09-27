@@ -263,10 +263,6 @@
     <Compile Include="Migrations\201708311512246_addedWarPlan.Designer.cs">
       <DependentUpon>201708311512246_addedWarPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709061831052_updatingSeedMethod.cs" />
-    <Compile Include="Migrations\201709061831052_updatingSeedMethod.Designer.cs">
-      <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201709071247452_addedKey.cs" />
     <Compile Include="Migrations\201709071247452_addedKey.Designer.cs">
       <DependentUpon>201709071247452_addedKey.cs</DependentUpon>
@@ -421,9 +417,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708311512246_addedWarPlan.resx">
       <DependentUpon>201708311512246_addedWarPlan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709061831052_updatingSeedMethod.resx">
-      <DependentUpon>201709061831052_updatingSeedMethod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709071247452_addedKey.resx">
       <DependentUpon>201709071247452_addedKey.cs</DependentUpon>
