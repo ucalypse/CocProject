@@ -1,10 +1,20 @@
-*.suo
-*.dll
-*.pdb
-*.cache
-ClashOfClans/bin
-ClashOfClans/obj/
-.vs/ClashOfClans/v15/*.suo
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
 ClashOfClans.Data/App_Data/
 ClashOfClans/App_Data/
 ClashOfClans/obj/Release/
