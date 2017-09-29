@@ -10,5 +10,6 @@ namespace ClashOfClans.Models
     {
         public CurrentWar CurrentWar { get; set; }
         public WarPlanModel WarPlan { get; set; }
+        public string MemberName { get; set; }
     }
 }

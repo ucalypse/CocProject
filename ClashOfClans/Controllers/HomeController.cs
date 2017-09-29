@@ -33,6 +33,7 @@ namespace ClashOfClans.Controllers
         [Authorize]
         public ActionResult WarRoom()
         {
+            var currentUser = User.Identity.Name;
             ViewBag.Message = "War Room";
             var warPlan = queries.GetWarPlan();
             var currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
@@ -40,10 +41,16 @@ namespace ClashOfClans.Controllers
             {
                 currentWar.OpposingClan.MembersInWars = reservation.AssignTargets(currentWar.OpposingClan.MembersInWars);
 
-                return View(new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan});
+                return View(BuildWarViewModel(currentWar, warPlan));
             }
             queries.ClearTargets();
             return View("NoWar");
+        }
+
+        private WarViewModel BuildWarViewModel(CurrentWar currentWar, WarPlanModel warPlan)
+        {
+            var memberName = queries.RetrieveMember(User.Identity.Name);
+            return new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan};
         }
 
         [HttpGet]
