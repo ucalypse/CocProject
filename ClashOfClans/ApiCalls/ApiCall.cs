@@ -11,6 +11,9 @@ namespace ClashOfClans.ApiCalls
         RestClient client = new RestClient("https://api.clashofclans.com/v1/");
         string token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjdiM2Y4M2ZlLWRmNDAtNDVkYS05MjYzLTU0ZTdmNDRmYzFmNiIsImlhdCI6MTUwMzI4NTUyMCwic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjk5LjE2NC4xNzYuMzUiLCIxMy42NS40MS4xMjciLCIxMy44NC4xODEuNDciLCIxMy42NS40Mi40MiIsIjEzLjY1LjQyLjM1Il0sInR5cGUiOiJjbGllbnQifV19.VAvdlOdT0zqjAi1ZdingQ0Id-wha25EqSZyh0CKI15UYvlyM1jKcf6icB49QKiSUzFItflIt9Ih00WGnXqbjHg";
 
+        private string workToken =
+                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjQ1YTE4NWE0LTY1ODEtNDgxNi05ZTk2LWRkNTZmMDdjMGM3YSIsImlhdCI6MTUwNjY4ODg2NSwic3ViIjoiZGV2ZWxvcGVyLzhhZTlkY2MxLTY2OTctNGMwZS1jMTI1LWJkNGNkNzc0MWMwZSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE1Mi4xNzkuNy4yMDYiXSwidHlwZSI6ImNsaWVudCJ9XX0.mfVpcOtaRocyyIC6fhbRihDJAariTm7kbdci87YLBPWxSokc8lhu1PqDGKLEASOim8gsQ2zBsCtJnLW7-GbFFg";
+
         public void ClanApiCall()
         {
             var request = new RestRequest("clans/{clanTag}/members", Method.GET);

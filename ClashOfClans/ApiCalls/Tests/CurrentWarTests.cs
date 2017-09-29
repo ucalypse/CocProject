@@ -31,5 +31,11 @@ namespace ClashOfClans.ApiCalls.Tests
             Queries queries = new Queries();
             queries.ClearTargets();
         }
+
+        [Test] public void MakeClanApiCall()
+        {
+            ApiCall apiCall = new ApiCall();
+            apiCall.ClanApiCall();
+        }
     }
 }
