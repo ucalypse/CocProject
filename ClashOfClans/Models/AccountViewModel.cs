@@ -66,6 +66,11 @@ namespace ClashOfClans.Models
 
     public class RegisterViewModel
     {
+        public RegisterViewModel()
+        {
+           MemberNameOptions = new SelectList(new string[0]); 
+        }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

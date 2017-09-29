@@ -33,7 +33,7 @@ namespace ClashOfClans.Controllers
         [Authorize]
         public ActionResult WarRoom()
         {
-            ViewBag.Message = " War Room";
+            ViewBag.Message = "War Room";
             var warPlan = queries.GetWarPlan();
             var currentWar = apiCall.GetCurrentWar("#8UJGPROJ");
             if (currentWar.State == "preparation" | currentWar.State == "inWar")
