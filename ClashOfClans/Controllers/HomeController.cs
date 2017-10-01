@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using ClashOfClans.ApiCalls;
 using ClashOfClans.Data;
 using ClashOfClans.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ClashOfClans.Controllers
 {
@@ -49,8 +50,8 @@ namespace ClashOfClans.Controllers
 
         private WarViewModel BuildWarViewModel(CurrentWar currentWar, WarPlanModel warPlan)
         {
-            var memberName = queries.RetrieveMember(User.Identity.Name);
-            return new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan};
+            var memberName = Queries.RetrieveMemberName(User.Identity.GetUserName());
+            return new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan, MemberName = memberName};
         }
 
         [HttpGet]

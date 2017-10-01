@@ -280,6 +280,10 @@
     <Compile Include="Migrations\201709260332223_fix.Designer.cs">
       <DependentUpon>201709260332223_fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710010331373_DeleteMappingTable.cs" />
+    <Compile Include="Migrations\201710010331373_DeleteMappingTable.Designer.cs">
+      <DependentUpon>201710010331373_DeleteMappingTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -432,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709260332223_fix.resx">
       <DependentUpon>201709260332223_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710010331373_DeleteMappingTable.resx">
+      <DependentUpon>201710010331373_DeleteMappingTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

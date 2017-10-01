@@ -109,17 +109,6 @@ namespace ClashOfClans.Data
             MemberContext db = new MemberContext();
             db.Database.ExecuteSqlCommand("TRUNCATE TABLE Reservations");
         }
-
-        public void MapEmailToMember(string email, string playerTag)
-        {
-            MemberContext db = new MemberContext();
-            using (db)
-            {
-                db.Mapper.Add(new MapEmailToMemberNameModel {Email = email, PlayerTag = playerTag});
-                db.SaveChanges();
-            }
-        }
-
         public static string RetrieveMemberName(string email)
         {
             ApplicationDbContext db = new ApplicationDbContext();
