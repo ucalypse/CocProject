@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ClashOfClans.Models;
 
 namespace ClashOfClans.Data
 {
@@ -121,20 +122,14 @@ namespace ClashOfClans.Data
 
         public static string RetrieveMemberName(string email)
         {
-            MemberContext db = new MemberContext();
-            var member = db.Mapper.Where(m => m.Email == email).SingleOrDefault();
+            ApplicationDbContext db = new ApplicationDbContext();
+           
+            var member = db.Users.Where(m => m.Email == email).SingleOrDefault();
             if (member != null)
             {
-                return GetMemberName(member.PlayerTag);
+                return member.MemberName;
             }
             return "";
         }
-
-        private static string GetMemberName(string playerTag)
-        {
-            MemberContext db = new MemberContext();
-            return db.Members.Where(m => m.PlayerTag == playerTag).Single().Name;
-        }
-       
     }
 }

@@ -150,7 +150,7 @@ namespace ClashOfClans.Controllers
         public ActionResult Register()
         {
             var view = new RegisterViewModel();
-            view.MemberNameOptions = new SelectList(_queries.GetAllMembers(), "PlayerTag", "Name");
+            view.MemberNameOptions = new SelectList(_queries.GetAllMembers(), "Name", "Name");
 
             return View(view);
         }

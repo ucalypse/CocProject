@@ -60,7 +60,7 @@ namespace ClashOfClans.ApiCalls
 
         public static string GetToken()
         {
-            return workToken;
+            return token;
         }
     }
 }
