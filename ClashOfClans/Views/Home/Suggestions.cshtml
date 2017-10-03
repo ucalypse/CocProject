@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Suggestions";
+}
+<h2>Suggestions</h2>
+<div class="jumbotron">
+    This page presents an opporunity for members to submit changes that they would like to see within the clan
+    in a format that isn't publicly visible through clan mail or clan chat.  It will be submitted anonymously and every suggestion
+    will be taken into consideration. Happy clanning!
+</div>
+<div class="form-group" id="form">
+    <label for="comment">Idea:</label>
+    <textarea id="suggestionArea" class="form-control" rows="5" id="comment"></textarea>
+    <button id="suggestionSubmit" type="submit">Submit</button>
+</div>
+<label id="successMessage"></label>
+<script>
+   $(function() {
+       $("#successMessage").hide();
+       $("#suggestionSubmit").click(function() {
+           var data = $("#suggestionArea").val();
+           $.post("SubmitSuggestion", { suggestion: data })
+               .done(function (wah) {
+               $("#form").hide(500);
+               $("#successMessage").html("Message Received");
+               $("#successMessage").show(1000);
+           });
+       });
+   })
+</script>
+

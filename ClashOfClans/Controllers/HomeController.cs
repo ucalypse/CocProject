@@ -100,5 +100,15 @@ namespace ClashOfClans.Controllers
         {
             queries.ClearTargets();
         }
+
+        public ActionResult Suggestions()
+        {
+            return View();
+        }
+
+        public void SubmitSuggestion(string suggestion)
+        {
+            queries.SubmitSuggestion(suggestion);
+        }
     }
 }

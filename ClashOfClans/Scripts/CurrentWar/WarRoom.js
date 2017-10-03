@@ -54,7 +54,7 @@
     });
     $(".warImages").click(function (event) {
         event.preventDefault();
-        var memberName = prompt("Enter your member name");
+        var memberName = "@(Model.MemberName)";
         var temp = this.getAttribute("data-position");
         var position = parseInt(temp) + 1;
         if (memberName !== null) {

@@ -120,5 +120,15 @@ namespace ClashOfClans.Data
             }
             return "";
         }
+
+        public void SubmitSuggestion(string suggestion)
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                db.Suggestions.Add(new Suggestion {Feedback = suggestion});
+                db.SaveChanges();
+            }
+        }
     }
 }

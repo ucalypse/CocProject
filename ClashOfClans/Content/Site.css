@@ -165,6 +165,9 @@ h1 {
     float: right;
     font-size: 80px;
 }
+h2 {
+    font-family: NoneShallPass;
+}
 
 @font-face {
     font-family: Cardiff;

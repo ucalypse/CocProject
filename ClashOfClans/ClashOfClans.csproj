@@ -216,6 +216,7 @@
     <Compile Include="Data\MemberContext.cs" />
     <Compile Include="Data\MemberModel.cs" />
     <Compile Include="Data\Queries.cs" />
+    <Compile Include="Data\Suggestion.cs" />
     <Compile Include="Data\TargetReservationModel.cs" />
     <Compile Include="Data\WarPlanModel.cs" />
     <Compile Include="Member.cs" />
@@ -283,6 +284,10 @@
     <Compile Include="Migrations\201710010331373_DeleteMappingTable.cs" />
     <Compile Include="Migrations\201710010331373_DeleteMappingTable.Designer.cs">
       <DependentUpon>201710010331373_DeleteMappingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710030314578_AddSuggestions.cs" />
+    <Compile Include="Migrations\201710030314578_AddSuggestions.Designer.cs">
+      <DependentUpon>201710030314578_AddSuggestions.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
@@ -396,6 +401,7 @@
     <Content Include="Views\Home\Tutorials.cshtml" />
     <Content Include="Views\Home\WarRoom.cshtml" />
     <Content Include="Views\Home\NoWar.cshtml" />
+    <Content Include="Views\Home\Suggestions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708141606146_initialMigration.resx">
@@ -439,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710010331373_DeleteMappingTable.resx">
       <DependentUpon>201710010331373_DeleteMappingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710030314578_AddSuggestions.resx">
+      <DependentUpon>201710030314578_AddSuggestions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
