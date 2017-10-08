@@ -54,11 +54,10 @@
     });
     $(".warImages").click(function (event) {
         event.preventDefault();
-        var memberName = "@(Model.MemberName)";
         var temp = this.getAttribute("data-position");
         var position = parseInt(temp) + 1;
         if (memberName !== null) {
-            $.post("/Home/ReserveTarget", { member: memberName, target: position })
+            $.post("/Home/ReserveTarget", { target: position })
                 .done(function (data) {
                     location.reload();
                 });

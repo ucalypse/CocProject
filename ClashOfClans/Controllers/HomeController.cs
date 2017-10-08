@@ -90,9 +90,10 @@ namespace ClashOfClans.Controllers
         }
 
         [HttpPost]
-        public void ReserveTarget(string member, int target)
+        public void ReserveTarget(int target)
         {
-            queries.ReserveTarget(member, target);
+            var memberName = Queries.RetrieveMemberName(User.Identity.GetUserName());
+            queries.ReserveTarget(memberName, target);
         }
 
         [HttpGet]
