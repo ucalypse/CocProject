@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClashOfClans", "ClashOfClans\ClashOfClans.csproj", "{F35B84F2-DB76-45C7-AF58-93D501296FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClashOfClans.Tests", "ClashOfClans.Tests\ClashOfClans.Tests.csproj", "{6F0C0DAE-D1C6-4AC4-BF91-83C99A7DBF1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{F35B84F2-DB76-45C7-AF58-93D501296FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F35B84F2-DB76-45C7-AF58-93D501296FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F35B84F2-DB76-45C7-AF58-93D501296FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0C0DAE-D1C6-4AC4-BF91-83C99A7DBF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0C0DAE-D1C6-4AC4-BF91-83C99A7DBF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0C0DAE-D1C6-4AC4-BF91-83C99A7DBF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0C0DAE-D1C6-4AC4-BF91-83C99A7DBF1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {391E24EE-56D3-4A8D-8654-0D4B33C05B5B}
 	EndGlobalSection
 EndGlobal
