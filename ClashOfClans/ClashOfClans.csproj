@@ -342,7 +342,8 @@
     <Content Include="fonts\NoneShallPassDEMO-KCFonts.ttf" />
     <Content Include="App_Data\ClashOfClans.Data.MemberContext.mdf" />
     <Content Include="fonts\AnglicanText.ttf" />
-    <None Include="Properties\PublishProfiles\ClashOfClans - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\inyoface - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\inyoface - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CurrentWar\WarRoom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

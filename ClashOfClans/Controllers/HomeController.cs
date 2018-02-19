@@ -101,12 +101,11 @@ namespace ClashOfClans.Controllers
         {
             queries.ClearTargets();
         }
-
+        [Authorize]
         public ActionResult Suggestions()
         {
             return View();
         }
-
         public void SubmitSuggestion(string suggestion)
         {
             queries.SubmitSuggestion(suggestion);
