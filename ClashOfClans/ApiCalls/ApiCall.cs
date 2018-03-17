@@ -28,7 +28,6 @@ namespace ClashOfClans.ApiCalls
         }
         public MemberModel PlayerApiCall(string playerTag)
         {
-            RestClient client = new RestClient("https://api.clashofclans.com/v1/");
             var request = new RestRequest("players/{playerTag}", Method.GET);
 
             request.AddHeader("Accept", "application/json");

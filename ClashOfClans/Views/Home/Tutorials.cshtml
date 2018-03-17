@@ -2,15 +2,29 @@
 @{
     ViewBag.Title = "Tutorials";
 }
-
+<body>
 <h2>Tutorials</h2>
 <div class="jumbotron">
 <a href="https://youtu.be/lUCdBPDnCc8">LavaLoon Attack Strategy - Dada - TH9</a><br/>
-    <a href="https://youtu.be/4zVmrvYnhsg">AQ Walk With Bowlers - Ekmurf - TH9</a><br/>
-    <a href="https://youtu.be/bW5ro0PAqjY">Traditional Valk Attack - Dada - TH9</a><br/>
+<a href="https://youtu.be/4zVmrvYnhsg">AQ Walk With Bowlers - Ekmurf - TH9</a><br/>
+<a href="https://youtu.be/bW5ro0PAqjY">Traditional Valk Attack - Dada - TH9</a><br/>
 <a href="https://youtu.be/gfVRIUFcFJk">Hogs - Dada - TH8</a><br/>
-<a href="https://youtu.be/S_o4c_Y31Qg">Inferno Tower Intro - Dada - TH9/TH10</a><br/>
 <a href="https://youtu.be/guza35tj3Mg">Lower Level Guide - Dada - TH4-6</a><br/>
 <a href="https://youtu.be/WO3_eo13Tdk">Th9 and 10 Farming - Lil Boy</a><br/>
 <a href="https://youtu.be/qDfvVssnAws">GOHO - Jam - TH9</a><br/>
+<a href="https://youtu.be/bVKMrSt0Aog">AQ Walk With Hogs - Dada - TH11</a><br/>
+<a href="https://youtu.be/7lBQyjjZsmc">Beginner Farming - BossBitch</a><br /><br />
+<button class="btn-primary" id="videoButton">Add Video</button>
 </div>
+<div id="VideoAdd" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeButton">&times;</span>
+        <div class="form-group">
+            <input type="text" id="videoLink" name="memberName" class="form-control" placeholder="Video Link" />
+            <textarea id="VideoDescription" style="height: 50px;" class="form-control" name="VideoDescription" placeholder="Enter Description"></textarea>
+            <button class="btn-primary" id="submitButton">Post</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="~/Scripts/Tutorials/Tutorials.js"></script>
