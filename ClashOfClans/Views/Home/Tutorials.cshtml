@@ -1,4 +1,4 @@
-﻿
+﻿@model ClashOfClans.Models.TutorialViewModel
 @{
     ViewBag.Title = "Tutorials";
 }
@@ -13,15 +13,19 @@
 <a href="https://youtu.be/WO3_eo13Tdk">Th9 and 10 Farming - Lil Boy</a><br/>
 <a href="https://youtu.be/qDfvVssnAws">GOHO - Jam - TH9</a><br/>
 <a href="https://youtu.be/bVKMrSt0Aog">AQ Walk With Hogs - Dada - TH11</a><br/>
-<a href="https://youtu.be/7lBQyjjZsmc">Beginner Farming - BossBitch</a><br /><br />
+<a href="https://youtu.be/7lBQyjjZsmc">Beginner Farming - BossBitch</a><br />
+<a href="https://youtu.be/kv-Ph9iDAHY">AQ Walk With Bowlers - Dada - TH11</a><br />
+
+<span id="newVideos"></span><span id="description"></span>
 <button class="btn-primary" id="videoButton">Add Video</button>
 </div>
 <div id="VideoAdd" class="modal">
     <div class="modal-content">
         <span class="close" id="closeButton">&times;</span>
         <div class="form-group">
-            <input type="text" id="videoLink" name="memberName" class="form-control" placeholder="Video Link" />
-            <textarea id="VideoDescription" style="height: 50px;" class="form-control" name="VideoDescription" placeholder="Enter Description"></textarea>
+            <input type="text" id="videoLink" name="videoLink" class="form-control" placeholder="Video Link" />
+            <input type="text" id="videoLinkLabel" name="videoLinkLabel" class="form-control" placeholder="Text to Display on Link" />
+            <textarea id="videoDescription" style="height: 50px;" class="form-control" name="videoDescription" placeholder="Enter Description"></textarea>
             <button class="btn-primary" id="submitButton">Post</button>
         </div>
     </div>

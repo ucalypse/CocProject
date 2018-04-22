@@ -8,7 +8,4 @@
         
         public static WarPlanModel Empty() => new WarPlanModel{MemberName = "None", Plan = "No Plan"};
     }
-
-    //implement Null Object pattern
-
 }

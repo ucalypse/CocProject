@@ -15,4 +15,11 @@
     $("#closeButton").click(function () {
         $("#VideoAdd").css("display", "none");
     });
+
+    $("#submitButton").click(function () {
+        var description = $("#videoDescription").val();
+        $("#newVideos").html("<a href = " + $("#videoLink").val() + ">" + $("#videoLinkLabel").val() + "</a> - ");
+        $("#description").html(description + "<br />");
+        $("#VideoAdd").css("display", "none");
+    });
 });

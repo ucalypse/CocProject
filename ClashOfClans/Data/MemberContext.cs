@@ -10,5 +10,6 @@ namespace ClashOfClans.Data
         public DbSet<WarPlanModel> WarPlans { get; set; }
         public DbSet<TargetReservationModel> Reservations { get; set; }
         public DbSet<Suggestion> Suggestions { get; set; }
+        public DbSet<TutorialModel> Videos { get; set; }
     }
 }

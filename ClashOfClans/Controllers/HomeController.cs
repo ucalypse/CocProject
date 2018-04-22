@@ -18,6 +18,7 @@ namespace ClashOfClans.Controllers
 
         public ActionResult Index()
         {
+            UpdateClanList();
             var view = new ClanListViewModel
             {
                 Members = queries.GetAllMembers()
@@ -29,7 +30,7 @@ namespace ClashOfClans.Controllers
         {
             ViewBag.Message = "Video Tutorials";
 
-            return View();
+            return View(GetVideos());
         }
         [Authorize]
         public ActionResult WarRoom()
@@ -53,8 +54,20 @@ namespace ClashOfClans.Controllers
             var memberName = Queries.RetrieveMemberName(User.Identity.GetUserName());
             return new WarViewModel {CurrentWar = currentWar, WarPlan = warPlan, MemberName = memberName};
         }
+        private List<TutorialViewModel> GetVideos()
+        {
+            var videos = queries.RetrieveVideos();
+            var videoViewModel = new List<TutorialViewModel>();
+            foreach(var video in videos)
+            {
+                videoViewModel.Add(new TutorialViewModel { VideoName = video.VideoName, Description = video.Description, URL = video.URL });
+            }
+            return videoViewModel;
+        }
+        private void SaveVideo(string url, string description, string title)
+        {
 
-        [HttpGet]
+        }
         public void UpdateClanList()
         {
              apiCall.ClanApiCall();

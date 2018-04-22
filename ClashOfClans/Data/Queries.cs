@@ -120,7 +120,15 @@ namespace ClashOfClans.Data
             }
             return "";
         }
-
+        public List<TutorialModel> RetrieveVideos()
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                return db.Videos.ToList();
+            }
+           
+        }
         public void SubmitSuggestion(string suggestion)
         {
             MemberContext db = new MemberContext();
