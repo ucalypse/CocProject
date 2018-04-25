@@ -1,21 +1,25 @@
-﻿@model ClashOfClans.Models.TutorialViewModel
+﻿@model List<ClashOfClans.Models.TutorialViewModel>
 @{
     ViewBag.Title = "Tutorials";
 }
 <body>
 <h2>Tutorials</h2>
-<div class="jumbotron">
-<a href="https://youtu.be/lUCdBPDnCc8">LavaLoon Attack Strategy - Dada - TH9</a><br/>
-<a href="https://youtu.be/4zVmrvYnhsg">AQ Walk With Bowlers - Ekmurf - TH9</a><br/>
-<a href="https://youtu.be/bW5ro0PAqjY">Traditional Valk Attack - Dada - TH9</a><br/>
-<a href="https://youtu.be/gfVRIUFcFJk">Hogs - Dada - TH8</a><br/>
-<a href="https://youtu.be/guza35tj3Mg">Lower Level Guide - Dada - TH4-6</a><br/>
-<a href="https://youtu.be/WO3_eo13Tdk">Th9 and 10 Farming - Lil Boy</a><br/>
-<a href="https://youtu.be/qDfvVssnAws">GOHO - Jam - TH9</a><br/>
-<a href="https://youtu.be/bVKMrSt0Aog">AQ Walk With Hogs - Dada - TH11</a><br/>
-<a href="https://youtu.be/7lBQyjjZsmc">Beginner Farming - BossBitch</a><br />
-<a href="https://youtu.be/kv-Ph9iDAHY">AQ Walk With Bowlers - Dada - TH11</a><br />
-
+    @{ var videoList = Model;}
+    <div class="col-md-12" id="memberTable" style="background-color:red;">
+        <table class="table table-inverse">
+            <thead>
+                <tr><th>Name</th><th>For Town Hall...</th></tr>
+                <br />
+                <br />
+            </thead>
+            @foreach (var video in videoList)
+            {
+                <tr>
+                    <td><a href="@video.URL">@video.VideoName</a></td>
+                    <td>@video.Description</td>
+                </tr>
+            }
+        </table>
 <span id="newVideos"></span><span id="description"></span>
 <button class="btn-primary" id="videoButton">Add Video</button>
 </div>

@@ -17,9 +17,14 @@
     });
 
     $("#submitButton").click(function () {
-        var description = $("#videoDescription").val();
-        $("#newVideos").html("<a href = " + $("#videoLink").val() + ">" + $("#videoLinkLabel").val() + "</a> - ");
-        $("#description").html(description + "<br />");
-        $("#VideoAdd").css("display", "none");
+        var text = $("#videoDescription").val();
+        var address = $("#videoLink").val();
+        var label = $("#videoLinkLabel").val();
+
+        $.post("/Home/SaveVideo", { url: address, description : text, title : label })
+            .done(function (data) {
+                $("#VideoAdd").css("display", "none");
+                location.reload();
+            });
     });
 });

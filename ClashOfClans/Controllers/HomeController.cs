@@ -18,12 +18,12 @@ namespace ClashOfClans.Controllers
 
         public ActionResult Index()
         {
-            UpdateClanList();
             var view = new ClanListViewModel
             {
-                Members = queries.GetAllMembers()
+                Members = queries.GetAllMembers().OrderByDescending(x => x.WarStars).ToList()
             };
             return View(view);
+           
         }
 
         public ActionResult Tutorials()
@@ -64,9 +64,10 @@ namespace ClashOfClans.Controllers
             }
             return videoViewModel;
         }
-        private void SaveVideo(string url, string description, string title)
+        [HttpPost]
+        public void SaveVideo(string url, string description, string title)
         {
-
+            queries.SaveVideo(url, description, title);
         }
         public void UpdateClanList()
         {
@@ -108,7 +109,6 @@ namespace ClashOfClans.Controllers
             var memberName = Queries.RetrieveMemberName(User.Identity.GetUserName());
             queries.ReserveTarget(memberName, target);
         }
-
         [HttpGet]
         public void ClearTargets()
         {

@@ -294,6 +294,18 @@
     <Compile Include="Migrations\201804221820291_Adding tutorials.Designer.cs">
       <DependentUpon>201804221820291_Adding tutorials.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804240023106_seedingVideos.cs" />
+    <Compile Include="Migrations\201804240023106_seedingVideos.Designer.cs">
+      <DependentUpon>201804240023106_seedingVideos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804240106275_correctingSeedData.cs" />
+    <Compile Include="Migrations\201804240106275_correctingSeedData.Designer.cs">
+      <DependentUpon>201804240106275_correctingSeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804250109170_adjustingSeed.cs" />
+    <Compile Include="Migrations\201804250109170_adjustingSeed.Designer.cs">
+      <DependentUpon>201804250109170_adjustingSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ClanListViewModel.cs" />
@@ -459,6 +471,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804221820291_Adding tutorials.resx">
       <DependentUpon>201804221820291_Adding tutorials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804240023106_seedingVideos.resx">
+      <DependentUpon>201804240023106_seedingVideos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804240106275_correctingSeedData.resx">
+      <DependentUpon>201804240106275_correctingSeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804250109170_adjustingSeed.resx">
+      <DependentUpon>201804250109170_adjustingSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
