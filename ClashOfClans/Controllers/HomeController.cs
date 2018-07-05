@@ -18,6 +18,7 @@ namespace ClashOfClans.Controllers
 
         public ActionResult Index()
         {
+            apiCall.ClanApiCall();
             var view = new ClanListViewModel
             {
                 Members = queries.GetAllMembers().OrderByDescending(x => x.WarStars).ToList()
