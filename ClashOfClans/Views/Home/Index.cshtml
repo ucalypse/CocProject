@@ -3,41 +3,104 @@
     ViewBag.Title = "In Yo Face - Best Clan on Earth";
 }
 
-<div class="jumbotron" id="banner">
-    <img src="~/Content/Images/homeBanner.jpg" id="homePicture"/>
-    <h1 id="homeBanner">In Yo Face Homepage</h1>
-    <h2>#8UJGPROJ</h2>
-    <h3><i>EST. 2015</i></h3>
-    <p class="text-primary">This site is designed to keep track of members, further explain clan rules and expectations, and provide training videos on various attacks</p>
+@section pageHeader
+{
+    <div class="jumbotron jumbotron-fluid" id="banner" style="opacity: 0.95;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="display-4">In Yo Face</h1>
+                    <p class="lead">home of the best clan on earth</p>
+                    <p class="lead">#8UJGPROJ</p>
+                </div>
+                <div class="col-md-4">
+                    <img id="clash-logo" src="~/Content/Images/clash-logo.png" />
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    @*<div class="jumbotron jumbotron-fluid" id="banner" style="background-color: #000; opacity: 0.95;">
+            <h1 id="homeBanner">In Yo Face - Clan Website</h1>
+            <h3>#8UJGPROJ</h3>
+            <h3><i>EST. 2015</i>
+            </h3>
+            <p class="text-primary">This site is designed to keep track of members, further explain clan rules and expectations, and provide training videos on various attacks</p>
 
-</div>
+        </div>*@
+}
 
-<div class="col-md-6">
-    <div class="container">
-        <div class="jumbotron jumbo">
-            <h3>Who are we looking for?</h3>
-            <h4>Understand that we are a war clan</h4>
-            <p>We are accepting members of any town hall level. We prefer if your base is not dumbass rushed, unless it is engineered then that is fine.</p>
-            <ul><em>MUST USE YOUR WAR ATTACKS</em></ul>
-            <ul>Must speak english - cant deal with these language barriers</ul>
-            <ul>If your flag is excessively red, and you do not respond in the clan chat, you will be kicked over a certain amount of time</ul>
-            <ul>Any skill level is welcome, we dont mind some coaching, but you must be open to feedback on your attacks and willing to try new ideas</ul>
-        </div> 
+<div class="row" style="margin-top: 70px;">
+    <div class="col-md-8">
+        <div class="container">
+            <div class="card" style="background-color: #f7f7f7; opacity: 0.85;">
+                <div class="card-header" style="background-color: #5b7aeb; color: #fff;"><h4>Interested in joining our clan?</h4></div>
+                <div class="card-body">
+                    <div class="card-title"><h6>Here's what you need to know.</h6></div>
+                    <h6>Clan Rules</h6>
+                    <ul>
+                        <li>We are a war clan. It's ok to opt-out of war if your upgrading heroes\spell factory or need the occasional break. But members with consistent red flags will be kicked.</li>
+                        <li>Age 16+.</li>
+                        <li>Able to speak clear English. Location isn't important but the ability to communicate with the rest of the clan is vital in war planning and language barriers make that difficult.</li>
+                        <li>We like to keep the chat relaxed but it still needs to be moderately clean. It's not the place for sex, drugs, etc. And we have a zero tolerance policy for any form of harassment or discrimination.</li>
+                        <li>During war, try to keep the chat on topic as much as possible so it's easy for other members to follow strategy changes as the war unfolds.</li>
+                        <li>When moving up to a new town hall, we focus on offensive upgrades before defenses to keep war weight in our favor. Always focus on army camps, troops, spell factory, lab, heroes, walls first. Try to hold off dropping heavy weight defensive structures such as x-bows, inferno towers, and eagle artillery until you've got most of your other upgrades complete.</li>
+                        <li>Your base needs to be maxed before moving to the next town hall. This includes heroes, troops, and walls.</li>
+                    </ul>
+                    <h6>Donations</h6>
+                    <ul>
+                        <li>Everyone, regardless of level, needs to make an effort to donate. Keeping a 1:3 donation ratio is the minimum (ex. donating 100 troops for 300 requested).</li>
+                        <li>If you have multiple accounts, try make sure the overall ratio across all accounts are reasonable.</li>
+                        <li>Only donate for war if you can give max troops.</li>
+                        <li>Try to keep from requesting specific troops for farming raids, ANY level should be fine (they are free troops after all). Requesting "max" troops excludes newer members from being able to donate.</li>
+                    </ul>
+                    <h6> War</h6>
+                    <ul>
+                        <li>Win or lose, both attacks must be used in every war.</li>
+                        <li>Always request CC troops before attacking in war. Clearly specify in your request that it's for war (ex. "hogs poison, war").</li>
+                        <li>War plans are sent in clan mail for every war. Members failing to follow the strategy may be kicked immediately.</li>
+                        <li>If you're not assigned a target, attack any target you can three star. <strong>This typically means attacking at least couple spots below your mirror.</strong></li>
+                        <li>If someone else completes one of your assigned targets, attack someone you can three star.</li>
+                        <li>A target isn't complete until it has been three starred.</li>
+                    </ul>
+                    <h6>Promotions</h6>
+                    <ul>
+                        <li>Elder is given to those who consistently participate in war, earn points in clan games, and donate at least 50% as much as they request.</li>
+                        <li>Co-leader is much harder to get. It's given to those who help grow the skills of others in the clan, donate as much as they request, and have been around for a long time. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card" style="background-color: #f4f4f4; opacity: 0.85;">
+            <div class="card-header" style="background-color: #4aa45a; color: #fff;"><h4>Our Members</h4></div>
+            <div class="card-body">
+                <div class="card-text">
+                    <table class="table table-borderless table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Rank</th>
+                                <th scope="col">War Stars</th>
+                            </tr>
+                        </thead>
+                        @foreach (var member in Model.Members.OrderBy(x => x.MemberId))
+                        {
+                            <tr>
+                                <td scope="row">@member.Name</td>
+                                <td>@member.MemberId</td>
+                                <td>@member.WarStars</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="col-md-6" id="memberTable">
-    <table class="table table-inverse">
-        <thead>
-        <tr><th>Name</th><th>Rank</th></tr>
-        <br /><br />
-        </thead>
-        @foreach (var member in Model.Members)
-        {
-            <tr>
-                <td>@member.Name</td>
-                <td>@member.MemberId</td>
-            </tr>
-        }
-    </table>
-</div>
-<hr/>
+
+
+
+<hr />

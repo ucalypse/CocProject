@@ -61,8 +61,31 @@ textarea {
 }
 
 #memberTable {
-    float: right;   
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
 }
+
+
+#banner {
+    background-color: #ff7f00;
+    opacity: 0.95;
+}
+
+#banner h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+#banner * {
+    color: #fff;
+}
+
+#clash-logo {
+    width: 100%;
+}
+
 #opponentTable {
     float: right;
     overflow: auto;
@@ -70,11 +93,6 @@ textarea {
 
 footer {
     text-align: center;
-}
-#memberTable.td{
-    background-color: white;
-    border: 5px solid black;
-    padding-right: 10px;
 }
 
 .clanRules {
@@ -100,10 +118,18 @@ table {
     font-family: NoneShallPass;
     font-size: 30px;
 }
+
 h1 {
-    font-family: Cardiff;
-    color: Red;
+    font-size: 36pt;
+    color: #363636;
+    font-weight: 800;
 }
+
+.clan-tag {
+    font-size: 36pt;
+    color: #363636;
+}
+
 #renderPlan {
     height: 1120px;
     background-image: url("Images/parchment.jpg");
