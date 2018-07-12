@@ -320,6 +320,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\background.jpg" />
     <Content Include="Content\Images\brickWall.jpg" />
+    <Content Include="Content\Images\clash-logo.png" />
     <Content Include="Content\Images\ClashBackground.jpg" />
     <Content Include="Content\Images\firebackground.jpg" />
     <Content Include="Content\Images\homeBanner.jpg" />
