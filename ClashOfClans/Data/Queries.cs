@@ -136,6 +136,15 @@ namespace ClashOfClans.Data
             }
            
         }
+        public void DeleteVideo(string url)
+        {
+            MemberContext db = new MemberContext();
+            using (db)
+            {
+                db.Videos.Remove(db.Videos.Where(x => x.URL.Equals(url)).FirstOrDefault());
+                db.SaveChanges();
+            }
+        }
         public void SubmitSuggestion(string suggestion)
         {
             MemberContext db = new MemberContext();

@@ -19,10 +19,9 @@ namespace ClashOfClans.Controllers
         public ActionResult Index()
         {
             apiCall.ClanApiCall();
-            var view = new ClanListViewModel
-            {
-                Members = queries.GetAllMembers().OrderByDescending(x => x.WarStars).ToList()
-            };
+            var members = queries.GetAllMembers().OrderByDescending(x => x.WarStars).ToList();
+            var view = members.Count() > 0 ? new ClanListViewModel { Members = members } : new ClanListViewModel { Members = new List<MemberModel>() };
+            
             return View(view);
            
         }
@@ -74,7 +73,11 @@ namespace ClashOfClans.Controllers
         {
              apiCall.ClanApiCall();
         }
-
+        [HttpPost]
+        public void DeleteVideo(string Url)
+        {
+            queries.DeleteVideo(Url);
+        }
         [HttpGet]
         public JsonResult ConvertedDateTime()
         {

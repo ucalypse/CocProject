@@ -5,23 +5,24 @@
 <body>
 <h2>Tutorials</h2>
     @{ var videoList = Model;}
-    <div class="col-md-12" id="memberTable" style="background-color:red;">
-        <table class="table table-inverse">
-            <thead>
-                <tr><th>Name</th><th>For Town Hall...</th></tr>
-                <br />
-                <br />
-            </thead>
-            @foreach (var video in videoList)
-            {
-                <tr>
-                    <td><a href="@video.URL">@video.VideoName</a></td>
-                    <td>@video.Description</td>
-                </tr>
-            }
-        </table>
-<span id="newVideos"></span><span id="description"></span>
-<button class="btn-primary" id="videoButton">Add Video</button>
+<div class="col-md-12" id="memberTable" style="background-color:red;">
+    <table class="table table-inverse">
+        <thead>
+            <tr><th>Name</th><th>For Town Hall...</th><th></th></tr>
+            <br />
+            <br />
+        </thead>
+        @foreach (var video in videoList)
+        {
+            <tr>
+                <td><a href="@video.URL">@video.VideoName</a></td>
+                <td>@video.Description</td>
+                <td><button class="btn-dark" id="deleteButton" name="deleteButton" onclick="deleteVideo('@video.URL')" style="height: 30px; width:100px;">Remove</button></td>
+            </tr>
+        }
+    </table>
+    <span id="newVideos"></span><span id="description"></span>
+    <button class="btn-primary" id="videoButton">Add Video</button>
 </div>
 <div id="VideoAdd" class="modal">
     <div class="modal-content">

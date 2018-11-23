@@ -19,7 +19,7 @@ namespace ClashOfClans.ApiCalls
             request.AddParameter("clanTag", "#8UJGPROJ", ParameterType.UrlSegment);
             var response = client.Execute<ClanListViewModel>(request);
             var newList = new List<MemberModel>();
-           
+            if (!response.IsSuccessful) return;
             foreach (var member in response.Data.Members)
             {
                 newList.Add(PlayerApiCall(member.PlayerTag));

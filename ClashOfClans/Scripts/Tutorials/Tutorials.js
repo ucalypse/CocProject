@@ -28,3 +28,18 @@
             });
     });
 });
+function deleteVideo(link) {
+    var name = prompt("Enter username");
+    var password = prompt("Enter Admin Password");
+    $.post("/Home/GetAuthentication", { adminName: name, adminPassword: password })
+        .done(function (data) {
+            if (data) {
+                $.post("/Home/DeleteVideo", { Url: link })
+                    .done(function (data) {
+                        location.reload();
+                    });
+            } else {
+                alert("Authentication failed");
+            }
+        });
+};
